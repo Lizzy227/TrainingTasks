@@ -2,6 +2,7 @@ using System.Drawing.Text;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
+
 namespace ExceptionHandeling
 {
     public partial class ExceptionHandler : Form
@@ -9,7 +10,24 @@ namespace ExceptionHandeling
         public ExceptionHandler()
         {
             InitializeComponent();
+            System.Threading.Timer threadingTimer = new System.Threading.Timer(ThreadingTimer_Tick);
+            threadingTimer.Change(1000, Timeout.Infinite);
 
+
+        }
+
+        private void ThreadingTimer_Tick(object state)
+        {
+            try
+            {
+
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -189,7 +207,15 @@ namespace ExceptionHandeling
 
         private async Task AsyncTaskMethod()
         {
-            await Task.FromException(new Exception("Async operation failed"));
+            try
+            {
+                await Task.FromException(new Exception("Async operation failed"));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -198,7 +224,7 @@ namespace ExceptionHandeling
         }
         private async Task AsyncTaskMethodWithTryCatch()
         {
-            
+
             try
             {
                 await Task.FromException(new Exception("Async operation failed"));
@@ -209,6 +235,101 @@ namespace ExceptionHandeling
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+        bool timerRunning = false;
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (!timerRunning)
+            {
+                timer1.Start();
+                timerRunning = true;
+                button12.Text = "Stop";
+            }
+            else
+            {
+                timer1.Stop();
+                timerRunning = false;
+                button12.Text = "Start";
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            methodBeingCalled();
+        }
+
+
+        bool timerRunning2 = false;
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (!timerRunning)
+            {
+                timer2.Start();
+                timerRunning = true;
+                button13.Text = "Stop";
+            }
+            else
+            {
+                timer2.Stop();
+                timerRunning = false;
+                button13.Text = "Start";
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        await AsyWork();
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                });
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private async Task AsyWork()
+        {
+            await Task.Run(async () =>
+            {
+                await Task.Delay(1000);
+                throw new NotImplementedException();
+            });
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -50,6 +51,16 @@
             button10 = new Button();
             label11 = new Label();
             button11 = new Button();
+            label12 = new Label();
+            button12 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            label13 = new Label();
+            button13 = new Button();
+            timer2 = new System.Windows.Forms.Timer(components);
+            label14 = new Label();
+            button14 = new Button();
+            button15 = new Button();
+            label15 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -261,11 +272,105 @@
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(436, 371);
+            label12.Name = "label12";
+            label12.Size = new Size(179, 15);
+            label12.TabIndex = 23;
+            label12.Text = "Standard Timer calling a method";
+            // 
+            // button12
+            // 
+            button12.Location = new Point(436, 389);
+            button12.Name = "button12";
+            button12.Size = new Size(75, 23);
+            button12.TabIndex = 22;
+            button12.Text = "button12";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 2000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(836, 39);
+            label13.Name = "label13";
+            label13.Size = new Size(162, 15);
+            label13.TabIndex = 25;
+            label13.Text = "Standard Timer with try catch";
+            // 
+            // button13
+            // 
+            button13.Location = new Point(836, 57);
+            button13.Name = "button13";
+            button13.Size = new Size(75, 23);
+            button13.TabIndex = 24;
+            button13.Text = "button13";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
+            // 
+            // timer2
+            // 
+            timer2.Interval = 2000;
+            timer2.Tick += timer2_Tick;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(836, 103);
+            label14.Name = "label14";
+            label14.Size = new Size(151, 15);
+            label14.TabIndex = 27;
+            label14.Text = "Thread Timer with try catch";
+            // 
+            // button14
+            // 
+            button14.Location = new Point(836, 121);
+            button14.Name = "button14";
+            button14.Size = new Size(75, 23);
+            button14.TabIndex = 26;
+            button14.Text = "button14";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(836, 183);
+            button15.Name = "button15";
+            button15.Size = new Size(75, 23);
+            button15.TabIndex = 28;
+            button15.Text = "button15";
+            button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(836, 165);
+            label15.Name = "label15";
+            label15.Size = new Size(128, 15);
+            label15.TabIndex = 29;
+            label15.Text = "Task.Run with try catch";
+            // 
             // ExceptionHandler
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1295, 450);
+            Controls.Add(label15);
+            Controls.Add(button15);
+            Controls.Add(label14);
+            Controls.Add(button14);
+            Controls.Add(label13);
+            Controls.Add(button13);
+            Controls.Add(label12);
+            Controls.Add(button12);
             Controls.Add(label11);
             Controls.Add(button11);
             Controls.Add(label10);
@@ -318,5 +423,15 @@
         private Button button10;
         private Label label11;
         private Button button11;
+        private Label label12;
+        private Button button12;
+        private System.Windows.Forms.Timer timer1;
+        private Label label13;
+        private Button button13;
+        private System.Windows.Forms.Timer timer2;
+        private Label label14;
+        private Button button14;
+        private Button button15;
+        private Label label15;
     }
 }
