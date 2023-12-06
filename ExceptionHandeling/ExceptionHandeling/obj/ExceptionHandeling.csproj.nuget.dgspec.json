@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lisa\\source\\repos\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj": {}
+    "C:\\Users\\lisa\\Documents\\GitHub\\TrainingTasks\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lisa\\source\\repos\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj": {
+    "C:\\Users\\lisa\\Documents\\GitHub\\TrainingTasks\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lisa\\source\\repos\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj",
+        "projectUniqueName": "C:\\Users\\lisa\\Documents\\GitHub\\TrainingTasks\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj",
         "projectName": "ExceptionHandeling",
-        "projectPath": "C:\\Users\\lisa\\source\\repos\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj",
+        "projectPath": "C:\\Users\\lisa\\Documents\\GitHub\\TrainingTasks\\ExceptionHandeling\\ExceptionHandeling\\ExceptionHandeling.csproj",
         "packagesPath": "C:\\Users\\lisa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lisa\\source\\repos\\ExceptionHandeling\\ExceptionHandeling\\obj\\",
+        "outputPath": "C:\\Users\\lisa\\Documents\\GitHub\\TrainingTasks\\ExceptionHandeling\\ExceptionHandeling\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
