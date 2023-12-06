@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouteCountTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecc4674112ebd95e94e2f85857e25064ed73d1d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b45d32ed5b4761b6cfdd66bed522a2c5fbdd8441")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouteCountTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouteCountTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
