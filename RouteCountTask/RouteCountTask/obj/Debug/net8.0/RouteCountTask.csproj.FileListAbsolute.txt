@@ -1,0 +1,15 @@
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\bin\Debug\net8.0\RouteCountTask.exe
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\bin\Debug\net8.0\RouteCountTask.deps.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\bin\Debug\net8.0\RouteCountTask.runtimeconfig.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\bin\Debug\net8.0\RouteCountTask.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\bin\Debug\net8.0\RouteCountTask.pdb
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.AssemblyInfoInputs.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.AssemblyInfo.cs
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.csproj.CoreCompileInputs.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.sourcelink.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\refint\RouteCountTask.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.pdb
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\RouteCountTask.genruntimeconfig.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\RouteCountTask\RouteCountTask\obj\Debug\net8.0\ref\RouteCountTask.dll
