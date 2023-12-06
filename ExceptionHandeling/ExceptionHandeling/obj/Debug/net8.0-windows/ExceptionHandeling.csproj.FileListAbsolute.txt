@@ -1,0 +1,16 @@
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\bin\Debug\net8.0-windows\ExceptionHandeling.exe
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\bin\Debug\net8.0-windows\ExceptionHandeling.deps.json
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\bin\Debug\net8.0-windows\ExceptionHandeling.runtimeconfig.json
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\bin\Debug\net8.0-windows\ExceptionHandeling.dll
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\bin\Debug\net8.0-windows\ExceptionHandeling.pdb
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.ExceptionHandler.resources
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.csproj.GenerateResource.cache
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.AssemblyInfoInputs.cache
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.AssemblyInfo.cs
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.csproj.CoreCompileInputs.cache
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.dll
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\refint\ExceptionHandeling.dll
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.pdb
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ExceptionHandeling.genruntimeconfig.cache
+C:\Users\lisa\source\repos\ExceptionHandeling\ExceptionHandeling\obj\Debug\net8.0-windows\ref\ExceptionHandeling.dll
