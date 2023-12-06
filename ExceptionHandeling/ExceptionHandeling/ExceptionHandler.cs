@@ -10,25 +10,12 @@ namespace ExceptionHandeling
         public ExceptionHandler()
         {
             InitializeComponent();
-            System.Threading.Timer threadingTimer = new System.Threading.Timer(ThreadingTimer_Tick);
-            threadingTimer.Change(1000, Timeout.Infinite);
+           
 
 
         }
 
-        private void ThreadingTimer_Tick(object state)
-        {
-            try
-            {
-
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -293,9 +280,26 @@ namespace ExceptionHandeling
             }
         }
 
+        private System.Threading.Timer threadingTimer;
         private void button14_Click(object sender, EventArgs e)
         {
+            if (threadingTimer == null)
+            {
+                threadingTimer = new System.Threading.Timer(ThreadingTimer_Tick, null, 0, 1000);
+            }
+        }
 
+        private void ThreadingTimer_Tick(object state)
+        {
+            try
+            {
+                threadingTimer.Change(1000, Timeout.Infinite);
+            }
+            catch (Exception ex)
+            {
+
+                throw new InvalidOperationException("Intentional Failure");
+            }
         }
 
         private async void button15_Click(object sender, EventArgs e)
