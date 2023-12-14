@@ -126,13 +126,20 @@ namespace Task1_CountdownTimer
             
             
                 
-                    int delay = Math.Min(_nStartTime, _nStepValue);
-                    countdownTimer.Interval = delay * 1000;
-                    _nStartTime -= delay;
-                    counterDisplay.Text = _nStartTime.ToString();
+            
+            int delay = Math.Min(_nStartTime, _nStepValue);
+            
+            countdownTimer.Interval = delay * 1000;
+            
+            _nStartTime -= delay;
+            
+            counterDisplay.Text = _nStartTime.ToString();
 
-                    
-                    return;
+
+            
+            
+            
+            return;
                 
             
             

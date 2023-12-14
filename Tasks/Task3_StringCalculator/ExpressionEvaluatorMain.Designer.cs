@@ -33,7 +33,7 @@
             label1 = new Label();
             EvaluateButton = new ReaLTaiizor.Controls.CrownButton();
             expressionTextbox = new ReaLTaiizor.Controls.CrownTextBox();
-            EvaluationBoolLabel = new ReaLTaiizor.Controls.CrownLabel();
+            TotalLabel = new ReaLTaiizor.Controls.CrownLabel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,8 +44,9 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 41);
+            panel1.Size = new Size(467, 20);
             panel1.TabIndex = 6;
             // 
             // nightControlBox1
@@ -62,7 +63,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(661, 0);
+            nightControlBox1.Location = new Point(328, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -76,18 +77,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(12, 4);
+            label1.Location = new Point(7, 2);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(231, 32);
+            label1.Size = new Size(134, 19);
             label1.TabIndex = 2;
             label1.Text = "Expression Evaluator";
             // 
             // EvaluateButton
             // 
-            EvaluateButton.Location = new Point(269, 285);
+            EvaluateButton.Location = new Point(160, 146);
+            EvaluateButton.Margin = new Padding(2);
             EvaluateButton.Name = "EvaluateButton";
-            EvaluateButton.Padding = new Padding(5);
-            EvaluateButton.Size = new Size(234, 46);
+            EvaluateButton.Padding = new Padding(3, 2, 3, 2);
+            EvaluateButton.Size = new Size(136, 23);
             EvaluateButton.TabIndex = 8;
             EvaluateButton.Text = "Evaluate";
             EvaluateButton.Click += EvaluateButton_Click;
@@ -97,33 +100,34 @@
             expressionTextbox.BackColor = Color.FromArgb(69, 73, 74);
             expressionTextbox.BorderStyle = BorderStyle.FixedSingle;
             expressionTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            expressionTextbox.Location = new Point(211, 145);
+            expressionTextbox.Location = new Point(124, 54);
+            expressionTextbox.Margin = new Padding(2);
             expressionTextbox.Name = "expressionTextbox";
-            expressionTextbox.Size = new Size(365, 35);
+            expressionTextbox.Size = new Size(214, 23);
             expressionTextbox.TabIndex = 9;
             // 
-            // EvaluationBoolLabel
+            // TotalLabel
             // 
-            EvaluationBoolLabel.AutoSize = true;
-            EvaluationBoolLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            EvaluationBoolLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            EvaluationBoolLabel.Location = new Point(346, 210);
-            EvaluationBoolLabel.Name = "EvaluationBoolLabel";
-            EvaluationBoolLabel.Size = new Size(69, 30);
-            EvaluationBoolLabel.TabIndex = 10;
-            EvaluationBoolLabel.Text = "Result";
+            TotalLabel.AutoSize = true;
+            TotalLabel.ForeColor = Color.FromArgb(220, 220, 220);
+            TotalLabel.Location = new Point(211, 102);
+            TotalLabel.Name = "TotalLabel";
+            TotalLabel.Size = new Size(32, 15);
+            TotalLabel.TabIndex = 11;
+            TotalLabel.Text = "Total";
             // 
             // ExpressionEvaluatorMain
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
-            ClientSize = new Size(800, 450);
-            Controls.Add(EvaluationBoolLabel);
+            ClientSize = new Size(467, 225);
+            Controls.Add(TotalLabel);
             Controls.Add(expressionTextbox);
             Controls.Add(EvaluateButton);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "ExpressionEvaluatorMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Expression Evaluator";
@@ -140,6 +144,6 @@
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private ReaLTaiizor.Controls.CrownButton EvaluateButton;
         private ReaLTaiizor.Controls.CrownTextBox expressionTextbox;
-        private ReaLTaiizor.Controls.CrownLabel EvaluationBoolLabel;
+        private ReaLTaiizor.Controls.CrownLabel TotalLabel;
     }
 }

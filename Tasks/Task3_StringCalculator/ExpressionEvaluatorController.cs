@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Task3_ExpressionEvaluator;
+using System.Text.RegularExpressions;
 
 namespace Task3_StringCalculator
 {
@@ -18,8 +19,6 @@ namespace Task3_StringCalculator
         {
             this.view = view;
             this.model = model;
-
-            // Subscribe to the UserInputReceived event
             this.view.UserInputReceived += ProcessUserInput;
         }
 
@@ -28,37 +27,36 @@ namespace Task3_StringCalculator
 
             try
             {
-                bool hasValidDelimiter = CheckValidDelimiter(expression);
+                string expressionCondensed = Regex.Replace(expression, @"\s+", "");
+                
+                bool hasValidOperators = CheckValidOperators(expressionCondensed);
 
-                if (hasValidDelimiter)
+                if(!hasValidOperators)
                 {
-                    model.Expression = expression; // 'expression' contains the input from the view
-                    bool evaluationResult = model.EvaluateExpression();
-                    view.UpdateEvaluationBoolLabel(evaluationResult);
+                    ShowErrorMessage("Please enter a valid expression with operators such as (/, *, +, -) and/or parenthesis such as ( or ).");
                 }
-                else
+
+                if (hasValidOperators )
                 {
-                    // Display a message to the user indicating the need for a valid expression
-                    ShowErrorMessage("Please enter a valid expression with a delimiter (=, <, >, ==, <=, >=)");
+                    model.Expression = expressionCondensed; 
+                    float evaluationResult = model.EvaluateExpression(expressionCondensed);
+                    view.UpdateTotalLabel(evaluationResult);
                 }
+                
             }
             catch (Exception ex)
-            {
-                // Handle any exceptions that might occur during processing
+            {                
                 ShowErrorMessage("An error occurred: " + ex.Message);
             }
         }
 
-        private bool CheckValidDelimiter(string expression)
+        private bool CheckValidOperators(string expression)
         {
-            // Check the expression for a valid delimiter in the controller
-            // Return true if a valid delimiter is found, else return false
-            return expression.Contains("=") || expression.Contains("<") || expression.Contains(">") || expression.Contains("<=") || expression.Contains(">=") || expression.Contains("==");
+            return expression.Contains("+") || expression.Contains("-") || expression.Contains("*") || expression.Contains("/") || expression.Contains("(") || expression.Contains(")");
         }
 
         private void ShowErrorMessage(string message)
-        {
-            // Display an error message using MessageBox
+        {            
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }

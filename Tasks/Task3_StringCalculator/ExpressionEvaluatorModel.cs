@@ -33,6 +33,8 @@ namespace Task3_ExpressionEvaluator
 
             Precedence = new Dictionary<char, int>
         {
+                { '(', 3 },
+                {')', 3},
             {'+', 1 },
             {'-', 1 },
             {'*', 2 },
@@ -40,33 +42,33 @@ namespace Task3_ExpressionEvaluator
         };
         }
 
-        void ExpressionOrganizer(string expression)
-        {
-            string[] delimiters = { ">=", "<=", "==", "=", "<", ">" };
-            FoundDelimiter = delimiters.FirstOrDefault(d => expression.Contains(d));
+        //void ExpressionOrganizer(string expression)
+        //{
+        //    string[] delimiters = { ">=", "<=", "==", "=", "<", ">" };
+        //    FoundDelimiter = delimiters.FirstOrDefault(d => expression.Contains(d));
 
-            if (!string.IsNullOrEmpty(FoundDelimiter))
-            {
-                string[] splitArray = expression.Split(new string[] { FoundDelimiter }, StringSplitOptions.RemoveEmptyEntries);
+        //    if (!string.IsNullOrEmpty(FoundDelimiter))
+        //    {
+        //        string[] splitArray = expression.Split(new string[] { FoundDelimiter }, StringSplitOptions.RemoveEmptyEntries);
 
-                if (splitArray.Length == 2)
-                {
-                    ExpressionLeft = splitArray[0];
-                    ExpressionRight = splitArray[1];
+        //        if (splitArray.Length == 2)
+        //        {
+        //            ExpressionLeft = splitArray[0];
+        //            ExpressionRight = splitArray[1];
 
 
-                }
-                else
-                {
-                    throw new Exception("Invalid input: String does not contain exactly one delimiter or there is no expression after the delimiter");
-                }
-            }
+        //        }
+        //        else
+        //        {
+        //            throw new Exception("Invalid input: String does not contain exactly one delimiter or there is no expression after the delimiter");
+        //        }
+        //    }
 
-            else
-            {
-                throw new Exception("No valid delimiter found in the string");
-            }
-        }
+        //    else
+        //    {
+        //        throw new Exception("No valid delimiter found in the string");
+        //    }
+        //}
 
 
         void Evaluator(string expression)
@@ -82,37 +84,47 @@ namespace Task3_ExpressionEvaluator
                 }
                 else if (c == '(')
                 {
+                    if (MultiValue.Length > 0)
+                    {
+                        MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                        Operands.Push(MultiValueAsFloat);
+                        MultiValue = "";
+                    }
+
                     Operators.Push(c);
                 }
                 if (c == ')')
                 {
+                    if (MultiValue.Length > 0)
+                    {
+                        MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                        Operands.Push(MultiValueAsFloat);
+                        MultiValue = "";
+                    }
+
                     while (Operators.Count > 0 && Operators.Peek() != '(')
                     {
-                        if (MultiValue.Length > 0)
-                        {
-                            MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
-                            Operands.Push(MultiValueAsFloat);
-                            MultiValue = "";
-                        }
-
                         ProcessOperations(Operands, Operators);
                     }
+
+                    if (Operators.Count > 0 && Operators.Peek() != '(')
+                    {
+                        throw new InvalidOperationException("Mismatched parentheses");
+                    }
+                        Operators.Pop(); // Discard '('
 
                 }
                 else if (Precedence.ContainsKey(c))
                 {
-                    if (Operators.Count > 0 && Operators.Peek() == '(')
+                    if (MultiValue.Length > 0)
                     {
-                        Operators.Pop(); // Discard the '('
+                        MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                        Operands.Push(MultiValueAsFloat);
+                        MultiValue = "";
                     }
-                    while (Operators.Count > 0 && Precedence[c] <= Precedence[Operators.Peek()])
+
+                    while (Operators.Count > 0 && Precedence[c] <= Precedence[Operators.Peek()] && Operators.Peek() != '(')
                     {
-                        if (MultiValue.Length > 0)
-                        {
-                            MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
-                            Operands.Push(MultiValueAsFloat);
-                            MultiValue = "";
-                        }
                         ProcessOperations(Operands, Operators);
                     }
 
@@ -131,78 +143,80 @@ namespace Task3_ExpressionEvaluator
                 Operands.Push(MultiValueAsFloat);
                 MultiValue = "";
             }
-            if (Operators.Count > 0)
+            while (Operands.Count > 0)
             {
                 ProcessOperations(Operands, Operators);
             }
             ExpressionResults.Push(Operands.Pop());
+
+
         }
 
-        bool ExpressionComparer()
-        {
-            string delimiter = FoundDelimiter;
-            float expressionResultRight = ExpressionResults.Pop();
-            float expressionResultLeft = ExpressionResults.Pop();
-            bool result = false;
+        //bool ExpressionComparer()
+        //{
+        //    string delimiter = FoundDelimiter;
+        //    float expressionResultRight = ExpressionResults.Pop();
+        //    float expressionResultLeft = ExpressionResults.Pop();
+        //    bool result = false;
 
-            switch (delimiter)
-            {
-                case "=":
-                    if (expressionResultLeft == expressionResultRight)
-                    {
-                        result = true;
-                    }
-                    break;
+        //    switch (delimiter)
+        //    {
+        //        case "=":
+        //            if (expressionResultLeft == expressionResultRight)
+        //            {
+        //                result = true;
+        //            }
+        //            break;
 
-                case "<":
-                    if (expressionResultLeft < expressionResultRight)
-                    {
-                        result = true;
-                    }
-                    break;
+        //        case "<":
+        //            if (expressionResultLeft < expressionResultRight)
+        //            {
+        //                result = true;
+        //            }
+        //            break;
 
-                case ">":
-                    if (expressionResultLeft > expressionResultRight)
-                    {
-                        result = true;
-                    }
-                    break;
+        //        case ">":
+        //            if (expressionResultLeft > expressionResultRight)
+        //            {
+        //                result = true;
+        //            }
+        //            break;
 
-                case "==":
-                    if (expressionResultLeft == expressionResultRight)
-                    {
-                        result = true;
-                    }
-                    break;
+        //        case "==":
+        //            if (expressionResultLeft == expressionResultRight)
+        //            {
+        //                result = true;
+        //            }
+        //            break;
 
-                case "<=":
-                    if (expressionResultLeft <= expressionResultRight)
-                    {
-                        result = true;
-                    }
-                    break;
+        //        case "<=":
+        //            if (expressionResultLeft <= expressionResultRight)
+        //            {
+        //                result = true;
+        //            }
+        //            break;
 
-                case ">=":
-                    if (expressionResultLeft >= expressionResultRight)
-                    {
-                        result = true;
-                    }
-                    break;
+        //        case ">=":
+        //            if (expressionResultLeft >= expressionResultRight)
+        //            {
+        //                result = true;
+        //            }
+        //            break;
 
-                default:
+        //        default:
 
-                    throw new Exception();
+        //            throw new Exception();
 
 
-            }
-            return result;
-        }
+        //    }
+        //    return result;
+        //}
 
         static void ProcessOperations(Stack<float> operands, Stack<char> operators)
         {
             char operatorSymbol = operators.Pop();
-            float operand1 = operands.Pop();
             float operand2 = operands.Pop();
+            float operand1 = operands.Pop();
             float result = 0;
 
             switch (operatorSymbol)
@@ -220,7 +234,7 @@ namespace Task3_ExpressionEvaluator
                     break;
 
                 case '/':
-                    result = operand2 / operand1;
+                    result = operand1 / operand2;
                     break;
                 default:
                     throw new Exception();
@@ -231,12 +245,12 @@ namespace Task3_ExpressionEvaluator
 
         }
 
-      public bool EvaluateExpression()
+      public float EvaluateExpression(string expression)
         {
-            ExpressionOrganizer(Expression);
-            Evaluator(ExpressionLeft); 
-            Evaluator(ExpressionRight);
-            return ExpressionComparer();
+            //ExpressionOrganizer(Expression);
+            Evaluator(Expression);
+            //Evaluator(ExpressionRight);
+            return ExpressionResults.Pop();
 
         }
 

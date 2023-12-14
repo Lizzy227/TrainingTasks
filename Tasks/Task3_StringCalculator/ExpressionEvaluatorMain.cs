@@ -20,18 +20,11 @@ namespace Task3_ExpressionEvaluator
             }
         }
 
-        public void UpdateEvaluationBoolLabel(bool result)
+        public void UpdateTotalLabel(float result)
         {
-            if (result)
-            {
-                EvaluationBoolLabel.Text = "Result: True";
-                EvaluationBoolLabel.ForeColor = Color.Green;
-            }
-            else
-            {
-                EvaluationBoolLabel.Text = "Result: False";
-                EvaluationBoolLabel.ForeColor = Color.Red;
-            }
+                TotalLabel.Text = result.ToString();
+                TotalLabel.ForeColor = Color.Green;
+           
         }
     }
 }
