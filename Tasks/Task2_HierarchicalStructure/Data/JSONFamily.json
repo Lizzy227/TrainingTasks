@@ -1,0 +1,69 @@
+[
+  {
+    "Id": "1b20eb9d-fea4-4d74-a366-49c8d13198d2",
+    "Name": "Barry",
+    "Surname": "Barrista",
+    "Age": 25,
+    "Sex": "Male",
+    "Gender": "Male",
+    "IsDeceased": false,
+    "Relationships": [
+      {
+        "RelatedPerson": {
+          "Id": "73d6ccf0-2ed3-4b05-91f5-e51b981ce46c",
+          "Name": "Combi",
+          "Surname": "Combination",
+          "Age": 25,
+          "Sex": "Male",
+          "Gender": "Male",
+          "IsDeceased": false,
+          "Relationships": []
+        },
+        "Type": 0
+      },
+      {
+        "RelatedPerson": {
+          "Id": "7354b82c-12bb-4725-8416-1c6ef5a6ec7f",
+          "Name": "Danny",
+          "Surname": "Daniels",
+          "Age": 54,
+          "Sex": "Male",
+          "Gender": "Male",
+          "IsDeceased": false,
+          "Relationships": []
+        },
+        "Type": 0
+      }
+    ]
+  },
+  {
+    "Id": "73d6ccf0-2ed3-4b05-91f5-e51b981ce46c",
+    "Name": "Combi",
+    "Surname": "Combination",
+    "Age": 25,
+    "Sex": "Male",
+    "Gender": "Male",
+    "IsDeceased": false,
+    "Relationships": []
+  },
+  {
+    "Id": "7354b82c-12bb-4725-8416-1c6ef5a6ec7f",
+    "Name": "Danny",
+    "Surname": "Daniels",
+    "Age": 54,
+    "Sex": "Male",
+    "Gender": "Male",
+    "IsDeceased": false,
+    "Relationships": []
+  },
+  {
+    "Id": "908a8d23-6dc0-4d2b-919e-f789a4fb9682",
+    "Name": "Alex",
+    "Surname": "Alexista",
+    "Age": 25,
+    "Sex": "Male",
+    "Gender": "Female",
+    "IsDeceased": false,
+    "Relationships": []
+  }
+]

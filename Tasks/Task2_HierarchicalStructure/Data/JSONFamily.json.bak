@@ -1,0 +1,48 @@
+[
+  {
+    "name": "John",
+    "relationships": [
+      {
+        "type": "Parent",
+        "relatedPerson": "Anne"
+      },
+      {
+        "type": "Sibling",
+        "relatedPerson": "Mark"
+      },
+      {
+        "type": "Partner",
+        "relatedPerson": "Jane"
+      }
+    ]
+  },
+  {
+    "name": "Anne",
+    "relationships": [
+      {
+        "type": "Child",
+        "relatedPerson": "John"
+      }
+    ]
+  },
+  {
+    "name": "Mark",
+    "relationships": [
+      {
+        "type": "Sibling",
+        "relatedPerson": "John"
+      }
+    ]
+  },
+  {
+    "name": "Jane",
+    "relationships": [
+      {
+        "type": "Partner",
+        "relatedPerson": "John"
+      }
+    ]
+  }
+]
+
+
