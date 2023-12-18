@@ -5,11 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CallbacksTask.Logger;
 
 namespace CallbacksTask
 {
     public class Logger : ILogger
     {
+        public delegate void LogCallBack(object sender, SimpleEventArgs e);
+
+
+        public event LogCallback EvenLogReceived;
+        public event LogCallback OddLogReceived;
+
         private System.Threading.Timer timer;
 
         public event EventHandler<SimpleEventArgs> LoggerMessage;
@@ -17,11 +24,13 @@ namespace CallbacksTask
         {
             try
             {
-                if (timer == null)
+                if (timer != null)
                 {
-
-                timer = new System.Threading.Timer(LogMessage, null, 0, 1000);
+                    return;
                 }
+               
+                timer = new System.Threading.Timer(LogMessage, null, 0, 1000);
+                
             }
             catch (Exception)
             {
@@ -33,7 +42,7 @@ namespace CallbacksTask
         private void LogMessage(object state)
         {
             string logMessage = $"Log entry at {DateTime.Now}";
-            var args = new SimpleEventArgs(logMessage);
+            SimpleEventArgs args = new SimpleEventArgs(logMessage);
             
             try
             {
