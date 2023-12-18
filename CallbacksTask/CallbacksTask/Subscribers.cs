@@ -16,18 +16,43 @@ namespace CallbacksTask
         }
         public void SubscribeToLoggerEvent(Logger logger)
         {
+            try
+            {
             logger.LoggerMessage += HandleLogMessageEvent;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void UnsubscribeFromLoggerEvent(Logger logger)
         {
+            try
+            {
             logger.LoggerMessage -= HandleLogMessageEvent;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void HandleLogMessageEvent(object sender, SimpleEventArgs e) 
         {
             string logMessage = e.LogMessage;
+
+            try
+            {
             UpdateTextBox(logMessage);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             
 
         }
