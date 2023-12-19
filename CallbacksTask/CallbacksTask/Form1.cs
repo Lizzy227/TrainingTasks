@@ -114,11 +114,16 @@ namespace CallbacksTask
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+                SimpleMessageProvider.MessageCallback evenCallback = subscribers.HandleEvenMessageEvent;
+                SimpleMessageProvider.MessageCallback oddCallback = subscribers.HandleOddMessageEvent;
             try
             {
-                logger?.LogInfo("Application is closing");
                 simpleMessageProvider.StopMessaging();
                 subscribers.UnsubscribeFromBothMessageEvents(simpleMessageProvider);
+                subscribers.UnsubscribeFromEvenMessagesEvent(simpleMessageProvider, evenCallback);
+                subscribers.UnsubscribeFromOddMessagesEvent(simpleMessageProvider, oddCallback);
+
+                logger?.LogInfo("Application is closing");
             }
             catch (Exception ex)
             {

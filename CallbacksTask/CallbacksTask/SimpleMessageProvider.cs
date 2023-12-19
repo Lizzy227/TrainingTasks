@@ -12,18 +12,17 @@ namespace CallbacksTask
 {
     public class SimpleMessageProvider
     {
+        private ILogger logger = Logger.Instance;
         public delegate void MessageCallback(object sender, SimpleEventArgs e);
-
-
         public event MessageCallback EvenMessageReceivedEvent;
         public event MessageCallback OddMessageReceivedEvent;
-
         private System.Threading.Timer timer;
 
         public void StartMessaging()
         {
             try
             {
+            logger?.LogInfo("Starting Timer if no timer is instantiated");
                 if (timer != null)
                 {
                     return;
@@ -32,10 +31,10 @@ namespace CallbacksTask
                 timer = new System.Threading.Timer(PrintMessage, null, 0, 1000);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                logger?.LogError($"Error when starting Timer: {ex.Message}");
             }
         }
 
@@ -45,7 +44,7 @@ namespace CallbacksTask
             SimpleEventArgs args = new SimpleEventArgs(printMessage);
 
             try
-            {
+            {                
                 if (DateTime.Now.Second % 2 == 0)
                 {
                     EvenMessageReceivedEvent?.Invoke(this, args);
@@ -55,10 +54,10 @@ namespace CallbacksTask
                     OddMessageReceivedEvent?.Invoke(this, args);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                logger?.LogError($"Error when Printing Message: {ex.Message}");
             }
         }
 
@@ -68,12 +67,12 @@ namespace CallbacksTask
             {
                 timer?.Dispose();
                 timer = null;
-
+                logger?.LogInfo("Timer disposed");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                logger?.LogError($"Error when Stopping Timer: {ex.Message}");
             }
         }
     }

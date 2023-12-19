@@ -55,7 +55,7 @@ namespace CallbacksTask
 
                 simpleMessageProvider.EvenMessageReceivedEvent += evenCallback;
                 subscribedEvenCallbacks.Add(evenCallback);
-                logger?.LogInfo("Callback subscribed to EvenEvent");
+                logger?.LogInfo("Subscribed to EvenEvent");
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace CallbacksTask
             {
                 simpleMessageProvider.OddMessageReceivedEvent += oddCallback;
                 subscribedOddCallbacks.Add(oddCallback);
-                logger?.LogInfo("Callback subscribed to OddEvent");
+                logger?.LogInfo("Subscribed to OddEvent");
 
             }
             catch (Exception ex)
@@ -105,6 +105,7 @@ namespace CallbacksTask
         {
             if (!subscribedEvenCallbacks.Contains(evenCallback))
             {
+                logger?.LogInfo("There's no EvenEvent to unsubscribe from");
                 return;
             }
 
@@ -113,7 +114,7 @@ namespace CallbacksTask
 
                 simpleMessageProvider.EvenMessageReceivedEvent -= evenCallback;
                 subscribedEvenCallbacks.Remove(evenCallback);
-                logger?.LogInfo("Callback unsubscribed from EvenEvent");
+                logger?.LogInfo("Unsubscribed from EvenEvent");
             }
             catch (Exception ex)
             {
@@ -126,6 +127,7 @@ namespace CallbacksTask
         {
             if (!subscribedOddCallbacks.Contains(oddCallback))
             {
+                logger?.LogInfo("There's no OddEvent to unsubscribe from");
                 return;
             }
 
@@ -133,7 +135,7 @@ namespace CallbacksTask
             {
                 simpleMessageProvider.OddMessageReceivedEvent -= oddCallback;
                 subscribedOddCallbacks.Remove(oddCallback);
-                logger?.LogInfo("Callback unsubscribed from OddEvent");
+                logger?.LogInfo("Unsubscribed from OddEvent");
 
             }
             catch (Exception ex)

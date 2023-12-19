@@ -160,3 +160,83 @@
 2023-12-19 13:34:23,171 INFO - Callback unsubscribed from OddEvent
 2023-12-19 13:34:25,126 INFO - Application is closing
 2023-12-19 13:34:25,126 INFO - Unsubscribed from BothEvents
+2023-12-19 13:59:42,967 INFO - Application starting...
+2023-12-19 13:59:44,926 INFO - Start button on BothEvents clicked
+2023-12-19 13:59:44,926 INFO - Subscribed to BothEvents
+2023-12-19 13:59:44,926 INFO - Starting Timer if no timer is instantiated
+2023-12-19 13:59:44,937 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:45,926 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:46,942 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:47,909 INFO - Start button on EvenEvent clicked
+2023-12-19 13:59:47,909 INFO - Callback subscribed to EvenEvent
+2023-12-19 13:59:47,943 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:48,926 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:49,009 INFO - Start button on OddEvent clicked
+2023-12-19 13:59:49,009 INFO - Callback subscribed to OddEvent
+2023-12-19 13:59:49,929 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:50,928 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:51,932 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:52,932 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:53,927 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:54,815 INFO - Stop button on BothEvents clicked
+2023-12-19 13:59:54,815 INFO - Unsubscribed from BothEvents
+2023-12-19 13:59:54,934 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:55,936 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:56,934 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:57,053 INFO - Stop button on EvenEvent clicked
+2023-12-19 13:59:57,053 INFO - Callback unsubscribed from EvenEvent
+2023-12-19 13:59:57,936 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:58,669 INFO - Stop button on OddEvent clicked
+2023-12-19 13:59:58,669 INFO - Callback unsubscribed from OddEvent
+2023-12-19 13:59:58,939 INFO - Printing message and Invoking Even and Odd events
+2023-12-19 13:59:59,588 INFO - Unsubscribed from BothEvents
+2023-12-19 13:59:59,588 INFO - Application is closing
+2023-12-19 14:02:37,213 INFO - Application starting...
+2023-12-19 14:02:38,656 INFO - Start button on BothEvents clicked
+2023-12-19 14:02:38,656 INFO - Subscribed to BothEvents
+2023-12-19 14:02:38,656 INFO - Starting Timer if no timer is instantiated
+2023-12-19 14:02:41,189 INFO - Start button on EvenEvent clicked
+2023-12-19 14:02:41,190 INFO - Callback subscribed to EvenEvent
+2023-12-19 14:02:41,845 INFO - Start button on OddEvent clicked
+2023-12-19 14:02:41,846 INFO - Callback subscribed to OddEvent
+2023-12-19 14:02:50,147 INFO - Stop button on BothEvents clicked
+2023-12-19 14:02:50,147 INFO - Unsubscribed from BothEvents
+2023-12-19 14:02:54,027 INFO - Stop button on EvenEvent clicked
+2023-12-19 14:02:54,027 INFO - Callback unsubscribed from EvenEvent
+2023-12-19 14:02:57,463 INFO - Stop button on OddEvent clicked
+2023-12-19 14:02:57,463 INFO - Callback unsubscribed from OddEvent
+2023-12-19 14:03:01,099 INFO - Timer disposed
+2023-12-19 14:03:01,099 INFO - Unsubscribed from BothEvents
+2023-12-19 14:03:01,099 INFO - Application is closing
+2023-12-19 14:11:45,350 INFO - Application starting...
+2023-12-19 14:11:50,590 INFO - Start button on BothEvents clicked
+2023-12-19 14:11:50,590 INFO - Subscribed to BothEvents
+2023-12-19 14:11:50,590 INFO - Starting Timer if no timer is instantiated
+2023-12-19 14:11:52,467 INFO - Start button on EvenEvent clicked
+2023-12-19 14:11:52,468 INFO - Subscribed to EvenEvent
+2023-12-19 14:11:52,997 INFO - Start button on OddEvent clicked
+2023-12-19 14:11:52,997 INFO - Subscribed to OddEvent
+2023-12-19 14:12:02,265 INFO - Stop button on BothEvents clicked
+2023-12-19 14:12:02,266 INFO - Unsubscribed from BothEvents
+2023-12-19 14:12:06,583 INFO - Stop button on EvenEvent clicked
+2023-12-19 14:12:06,583 INFO - Unsubscribed from EvenEvent
+2023-12-19 14:12:07,534 INFO - Stop button on OddEvent clicked
+2023-12-19 14:12:07,535 INFO - Unsubscribed from OddEvent
+2023-12-19 14:12:08,840 INFO - Timer disposed
+2023-12-19 14:12:08,841 INFO - Unsubscribed from BothEvents
+2023-12-19 14:12:08,841 INFO - There's no EvenEvent to unsubscribe from
+2023-12-19 14:12:08,841 INFO - There's no OddEvent to unsubscribe from
+2023-12-19 14:12:08,841 INFO - Application is closing
+2023-12-19 14:12:45,444 INFO - Application starting...
+2023-12-19 14:12:46,698 INFO - Start button on BothEvents clicked
+2023-12-19 14:12:46,698 INFO - Subscribed to BothEvents
+2023-12-19 14:12:46,699 INFO - Starting Timer if no timer is instantiated
+2023-12-19 14:12:47,295 INFO - Start button on EvenEvent clicked
+2023-12-19 14:12:47,295 INFO - Subscribed to EvenEvent
+2023-12-19 14:12:47,993 INFO - Start button on OddEvent clicked
+2023-12-19 14:12:47,993 INFO - Subscribed to OddEvent
+2023-12-19 14:12:51,191 INFO - Timer disposed
+2023-12-19 14:12:51,191 INFO - Unsubscribed from BothEvents
+2023-12-19 14:12:51,192 INFO - Unsubscribed from EvenEvent
+2023-12-19 14:12:51,192 INFO - Unsubscribed from OddEvent
+2023-12-19 14:12:51,192 INFO - Application is closing
