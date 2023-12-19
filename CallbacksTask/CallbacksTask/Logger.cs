@@ -19,8 +19,7 @@ namespace CallbacksTask
         public event MessageCallback OddMessageReceivedEvent; 
 
         private System.Threading.Timer timer;
-
-        public event EventHandler<SimpleEventArgs> SimpleMessageEvent;
+              
         public void StartMessaging()
         {
             try

@@ -13,7 +13,6 @@ namespace CallbacksTask
         public Form1()
         {
             InitializeComponent();
-            XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
             logger = new Logger();
             tbBothEvents.ReadOnly = true;
             tbEvenEvents.ReadOnly = true;
@@ -31,10 +30,9 @@ namespace CallbacksTask
                 logger.StartMessaging();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -45,10 +43,9 @@ namespace CallbacksTask
                 subscribers.UnsubscribeFromBothMessageEvents(logger);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -59,10 +56,9 @@ namespace CallbacksTask
                 logger.StopMessaging();
                 subscribers.UnsubscribeFromBothMessageEvents(logger);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

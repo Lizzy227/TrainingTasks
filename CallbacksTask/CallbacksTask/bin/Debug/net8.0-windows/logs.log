@@ -92,3 +92,24 @@
 2023-12-19 11:26:12,705 INFO - Callback subscribed to Odd event
 2023-12-19 11:26:17,799 INFO - Callback unsubscribed from Even event
 2023-12-19 11:26:22,194 INFO - Callback subscribed from Odd event
+2023-12-19 11:37:52,226 INFO - Application starting...
+2023-12-19 11:37:56,955 INFO - Callback subscribed to Even event
+2023-12-19 11:40:02,884 INFO - Application starting...
+2023-12-19 11:40:20,364 INFO - Callback subscribed to Even event
+2023-12-19 11:40:25,733 INFO - Callback subscribed to Odd event
+2023-12-19 11:54:36,246 INFO - Application starting...
+2023-12-19 11:54:39,347 INFO - Subscribed to both events
+2023-12-19 11:54:41,059 INFO - Callback subscribed to Even event
+2023-12-19 11:54:41,780 INFO - Callback subscribed to Odd event
+2023-12-19 11:54:46,060 INFO - Unsubscribed from both events
+2023-12-19 11:54:46,738 INFO - Callback unsubscribed from Even event
+2023-12-19 11:54:47,412 INFO - Callback subscribed from Odd event
+2023-12-19 11:54:48,534 INFO - Unsubscribed from both events
+2023-12-19 11:57:03,140 INFO - Application starting...
+2023-12-19 11:57:04,409 INFO - Subscribed to both events
+2023-12-19 11:57:07,038 INFO - Callback subscribed to Even event
+2023-12-19 11:57:11,190 INFO - Callback subscribed to Odd event
+2023-12-19 11:57:14,068 INFO - Unsubscribed from both events
+2023-12-19 11:57:15,226 INFO - Callback unsubscribed from Even event
+2023-12-19 11:57:17,046 INFO - Callback subscribed from Odd event
+2023-12-19 11:57:18,649 INFO - Unsubscribed from both events

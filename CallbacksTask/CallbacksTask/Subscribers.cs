@@ -31,12 +31,12 @@ namespace CallbacksTask
             {
             logger.EvenMessageReceivedEvent += HandleBothMessageEvent;
             logger.OddMessageReceivedEvent += HandleBothMessageEvent;
-
+                log.Info("Subscribed to both events");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                log.Error($"Error subscribing to Both events: {ex.Message}");
             }
         }
 
@@ -54,10 +54,10 @@ namespace CallbacksTask
                 subscribedEvenCallbacks.Add(evenCallback);
                 log.Info("Callback subscribed to Even event");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                log.Error("Unable to subscribe callback to Even event");
+                log.Error($"Error subscribing to Even event: {ex.Message}");
             }
 
         }
@@ -76,10 +76,10 @@ namespace CallbacksTask
                 log.Info("Callback subscribed to Odd event");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                log.Error("Unable to subscribe callback to Odd event");
+                log.Error($"Error subscribing to Odd event: {ex.Message}");
             }
 
         }
@@ -90,11 +90,12 @@ namespace CallbacksTask
             {
                 logger.EvenMessageReceivedEvent -= HandleBothMessageEvent;
                 logger.OddMessageReceivedEvent -= HandleBothMessageEvent;
+                log.Info("Unsubscribed from both events");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                log.Error($"Error unsubscribing from Both events: {ex.Message}");
             }
         }
         public void UnsubscribeFromEvenMessagesEvent(Logger logger, Logger.MessageCallback evenCallback)
@@ -111,10 +112,10 @@ namespace CallbacksTask
                 subscribedEvenCallbacks.Remove(evenCallback);
                 log.Info("Callback unsubscribed from Even event");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                log.Error("Unable to unsubscribe callback from Even event");
+                log.Error($"Error unsubscribing from Even event: {ex.Message}");
             }
         }
 
@@ -132,10 +133,10 @@ namespace CallbacksTask
                 log.Info("Callback subscribed from Odd event");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                log.Error("Unable to unsubscribe callback from Odd event");
+                log.Error($"Error unsubscribing from Odd event: {ex.Message}");
             }
 
 
@@ -173,10 +174,10 @@ namespace CallbacksTask
                     textBox.AppendText(message + Environment.NewLine);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                log.Error($"Error updating textbox: {ex.Message}");
             }
         }
     }
