@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxLogs = new TextBox();
+            tbBothEvents = new TextBox();
             btnStartLogs = new Button();
             btnStopLogs = new Button();
             btnStopEvenCallback = new Button();
             btnStartEvenCallback = new Button();
-            textBox1 = new TextBox();
+            tbEvenEvents = new TextBox();
             lbAll = new Label();
             lbEven = new Label();
             lbOdd = new Label();
             btnStopOddCallback = new Button();
             btnStartOddCallback = new Button();
-            textBox2 = new TextBox();
+            tbOddEvents = new TextBox();
             SuspendLayout();
             // 
-            // textBoxLogs
+            // tbBothEvents
             // 
-            textBoxLogs.Location = new Point(53, 110);
-            textBoxLogs.Multiline = true;
-            textBoxLogs.Name = "textBoxLogs";
-            textBoxLogs.Size = new Size(241, 410);
-            textBoxLogs.TabIndex = 0;
+            tbBothEvents.Location = new Point(53, 110);
+            tbBothEvents.Multiline = true;
+            tbBothEvents.Name = "tbBothEvents";
+            tbBothEvents.Size = new Size(241, 410);
+            tbBothEvents.TabIndex = 0;
             // 
             // btnStartLogs
             // 
@@ -58,7 +58,7 @@
             btnStartLogs.TabIndex = 1;
             btnStartLogs.Text = "Start";
             btnStartLogs.UseVisualStyleBackColor = true;
-            btnStartLogs.Click += btnStartLogs_Click;
+            btnStartLogs.Click += btnStartMessaging_Click;
             // 
             // btnStopLogs
             // 
@@ -68,7 +68,7 @@
             btnStopLogs.TabIndex = 2;
             btnStopLogs.Text = "Stop";
             btnStopLogs.UseVisualStyleBackColor = true;
-            btnStopLogs.Click += btnStopLogs_Click;
+            btnStopLogs.Click += btnStopMessaging_Click;
             // 
             // btnStopEvenCallback
             // 
@@ -90,13 +90,13 @@
             btnStartEvenCallback.UseVisualStyleBackColor = true;
             btnStartEvenCallback.Click += btnStartEvenCallback_Click;
             // 
-            // textBox1
+            // tbEvenEvents
             // 
-            textBox1.Location = new Point(401, 110);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(241, 410);
-            textBox1.TabIndex = 3;
+            tbEvenEvents.Location = new Point(401, 110);
+            tbEvenEvents.Multiline = true;
+            tbEvenEvents.Name = "tbEvenEvents";
+            tbEvenEvents.Size = new Size(241, 410);
+            tbEvenEvents.TabIndex = 3;
             // 
             // lbAll
             // 
@@ -133,6 +133,7 @@
             btnStopOddCallback.TabIndex = 10;
             btnStopOddCallback.Text = "Stop";
             btnStopOddCallback.UseVisualStyleBackColor = true;
+            btnStopOddCallback.Click += btnStopOddCallback_Click;
             // 
             // btnStartOddCallback
             // 
@@ -142,14 +143,15 @@
             btnStartOddCallback.TabIndex = 9;
             btnStartOddCallback.Text = "Start";
             btnStartOddCallback.UseVisualStyleBackColor = true;
+            btnStartOddCallback.Click += btnStartOddCallback_Click;
             // 
-            // textBox2
+            // tbOddEvents
             // 
-            textBox2.Location = new Point(749, 110);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(241, 410);
-            textBox2.TabIndex = 8;
+            tbOddEvents.Location = new Point(749, 110);
+            tbOddEvents.Multiline = true;
+            tbOddEvents.Name = "tbOddEvents";
+            tbOddEvents.Size = new Size(241, 410);
+            tbOddEvents.TabIndex = 8;
             // 
             // Form1
             // 
@@ -159,15 +161,15 @@
             Controls.Add(lbOdd);
             Controls.Add(btnStopOddCallback);
             Controls.Add(btnStartOddCallback);
-            Controls.Add(textBox2);
+            Controls.Add(tbOddEvents);
             Controls.Add(lbEven);
             Controls.Add(lbAll);
             Controls.Add(btnStopEvenCallback);
             Controls.Add(btnStartEvenCallback);
-            Controls.Add(textBox1);
+            Controls.Add(tbEvenEvents);
             Controls.Add(btnStopLogs);
             Controls.Add(btnStartLogs);
-            Controls.Add(textBoxLogs);
+            Controls.Add(tbBothEvents);
             Name = "Form1";
             Text = "Form1";
             FormClosing += Form1_FormClosing;
@@ -177,17 +179,17 @@
 
         #endregion
 
-        private TextBox textBoxLogs;
+        private TextBox tbBothEvents;
         private Button btnStartLogs;
         private Button btnStopLogs;
         private Button btnStopEvenCallback;
         private Button btnStartEvenCallback;
-        private TextBox textBox1;
+        private TextBox tbEvenEvents;
         private Label lbAll;
         private Label lbEven;
         private Label lbOdd;
         private Button btnStopOddCallback;
         private Button btnStartOddCallback;
-        private TextBox textBox2;
+        private TextBox tbOddEvents;
     }
 }

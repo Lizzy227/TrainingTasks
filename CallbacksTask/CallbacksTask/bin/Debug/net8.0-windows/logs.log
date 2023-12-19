@@ -31,3 +31,64 @@
 2023-12-18 11:04:46,996 INFO - Log entry at 2023/12/18 11:04:46
 2023-12-18 11:04:48,001 INFO - Log entry at 2023/12/18 11:04:48
 2023-12-18 11:04:48,990 INFO - Log entry at 2023/12/18 11:04:48
+2023-12-19 08:51:57,472 INFO - Application starting...
+2023-12-19 08:56:38,518 INFO - Application starting...
+2023-12-19 10:27:36,494 INFO - Application starting...
+2023-12-19 10:29:21,434 INFO - Application starting...
+2023-12-19 10:30:55,514 INFO - Application starting...
+2023-12-19 10:34:28,211 INFO - Application starting...
+2023-12-19 11:13:06,067 INFO - Application starting...
+2023-12-19 11:13:10,758 INFO - Callback subscribed to Even event
+2023-12-19 11:13:24,965 INFO - Callback unsubscribed from Even event
+2023-12-19 11:16:12,926 INFO - Application starting...
+2023-12-19 11:16:15,764 INFO - Callback subscribed to Odd event
+2023-12-19 11:16:28,247 INFO - Callback subscribed to Even event
+2023-12-19 11:16:36,029 INFO - Callback unsubscribed from Even event
+2023-12-19 11:16:46,299 INFO - Callback subscribed from Odd event
+2023-12-19 11:16:46,509 INFO - Callback subscribed from Odd event
+2023-12-19 11:16:54,170 INFO - Callback subscribed to Even event
+2023-12-19 11:16:59,869 INFO - Callback unsubscribed from Even event
+2023-12-19 11:17:01,285 INFO - Callback subscribed to Even event
+2023-12-19 11:17:07,672 INFO - Callback unsubscribed from Even event
+2023-12-19 11:17:22,229 INFO - Callback subscribed to Even event
+2023-12-19 11:17:40,025 INFO - Callback subscribed from Odd event
+2023-12-19 11:17:54,047 INFO - Application starting...
+2023-12-19 11:18:00,555 INFO - Callback subscribed to Odd event
+2023-12-19 11:18:10,467 INFO - Callback subscribed to Even event
+2023-12-19 11:18:16,948 INFO - Callback unsubscribed from Even event
+2023-12-19 11:18:18,973 INFO - Callback subscribed from Odd event
+2023-12-19 11:18:29,693 INFO - Callback subscribed from Odd event
+2023-12-19 11:18:30,843 INFO - Callback subscribed to Even event
+2023-12-19 11:19:32,318 INFO - Application starting...
+2023-12-19 11:19:39,790 INFO - Callback subscribed to Even event
+2023-12-19 11:19:41,835 INFO - Callback subscribed to Odd event
+2023-12-19 11:20:29,510 INFO - Application starting...
+2023-12-19 11:20:40,626 INFO - Callback subscribed to Odd event
+2023-12-19 11:20:47,747 INFO - Callback subscribed from Odd event
+2023-12-19 11:20:53,913 INFO - Callback subscribed to Even event
+2023-12-19 11:20:56,999 INFO - Callback unsubscribed from Even event
+2023-12-19 11:20:58,179 INFO - Callback subscribed to Even event
+2023-12-19 11:21:00,335 INFO - Callback subscribed from Odd event
+2023-12-19 11:21:56,310 INFO - Application starting...
+2023-12-19 11:21:58,771 INFO - Callback subscribed to Odd event
+2023-12-19 11:22:01,665 INFO - Callback subscribed from Odd event
+2023-12-19 11:22:10,037 INFO - Callback subscribed to Even event
+2023-12-19 11:22:13,409 INFO - Callback unsubscribed from Even event
+2023-12-19 11:22:22,565 INFO - Callback subscribed from Odd event
+2023-12-19 11:22:22,781 INFO - Callback subscribed from Odd event
+2023-12-19 11:23:07,844 INFO - Application starting...
+2023-12-19 11:23:09,757 INFO - Callback subscribed to Odd event
+2023-12-19 11:23:15,728 INFO - Callback subscribed from Odd event
+2023-12-19 11:23:17,315 INFO - Callback subscribed to Odd event
+2023-12-19 11:23:22,839 INFO - Callback subscribed to Even event
+2023-12-19 11:23:27,511 INFO - Callback unsubscribed from Even event
+2023-12-19 11:23:28,555 INFO - Callback subscribed from Odd event
+2023-12-19 11:23:33,047 INFO - Callback subscribed to Even event
+2023-12-19 11:23:35,821 INFO - Callback subscribed to Odd event
+2023-12-19 11:23:49,033 INFO - Callback unsubscribed from Even event
+2023-12-19 11:23:49,787 INFO - Callback subscribed from Odd event
+2023-12-19 11:26:02,811 INFO - Application starting...
+2023-12-19 11:26:10,130 INFO - Callback subscribed to Even event
+2023-12-19 11:26:12,705 INFO - Callback subscribed to Odd event
+2023-12-19 11:26:17,799 INFO - Callback unsubscribed from Even event
+2023-12-19 11:26:22,194 INFO - Callback subscribed from Odd event

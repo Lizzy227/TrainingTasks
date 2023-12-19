@@ -8,7 +8,7 @@ namespace CallbacksTask
 {
     internal interface ILogger
     {
-        void StartLogging();
-        void StopLogging();
+        void StartMessaging();
+        void StopMessaging();
     }
 }

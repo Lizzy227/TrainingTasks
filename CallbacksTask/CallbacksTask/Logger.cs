@@ -3,6 +3,7 @@ using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using static CallbacksTask.Logger;
@@ -11,16 +12,16 @@ namespace CallbacksTask
 {
     public class Logger : ILogger
     {
-        public delegate void LogCallBack(object sender, SimpleEventArgs e);
+        public delegate void MessageCallback(object sender, SimpleEventArgs e);
 
 
-        public event LogCallback EvenLogReceived;
-        public event LogCallback OddLogReceived;
+        public event MessageCallback EvenMessageReceivedEvent;
+        public event MessageCallback OddMessageReceivedEvent; 
 
         private System.Threading.Timer timer;
 
-        public event EventHandler<SimpleEventArgs> LoggerMessage;
-        public void StartLogging()
+        public event EventHandler<SimpleEventArgs> SimpleMessageEvent;
+        public void StartMessaging()
         {
             try
             {
@@ -29,7 +30,7 @@ namespace CallbacksTask
                     return;
                 }
                
-                timer = new System.Threading.Timer(LogMessage, null, 0, 1000);
+                timer = new System.Threading.Timer(PrintMessage, null, 0, 1000);
                 
             }
             catch (Exception)
@@ -39,14 +40,21 @@ namespace CallbacksTask
             }
         }
 
-        private void LogMessage(object state)
+        private void PrintMessage(object state)
         {
-            string logMessage = $"Log entry at {DateTime.Now}";
-            SimpleEventArgs args = new SimpleEventArgs(logMessage);
+            string printMessage = $"Log entry at {DateTime.Now}";
+            SimpleEventArgs args = new SimpleEventArgs(printMessage);
             
             try
             {
-                LoggerMessage?.Invoke(this, args);
+                if ( DateTime.Now.Second % 2 ==0)
+                {
+                    EvenMessageReceivedEvent?.Invoke(this, args);
+                }
+                else 
+                {
+                    OddMessageReceivedEvent?.Invoke(this, args);
+                }
             }
             catch (Exception)
             {
@@ -55,7 +63,7 @@ namespace CallbacksTask
             }
         }
 
-        public void StopLogging()
+        public void StopMessaging()
         {
             try
             {

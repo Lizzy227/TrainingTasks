@@ -8,12 +8,12 @@ namespace CallbacksTask
 {
     public class SimpleEventArgs : EventArgs
     {
-        public string LogMessage { get; private set; }
+        public string Message { get; private set; }
         //public DateTime LogDateTime { get; private set; }
 
-        public SimpleEventArgs(string logMessage)
+        public SimpleEventArgs(string message)
         {
-            LogMessage = logMessage;
+            Message = message;
             
         }
     }

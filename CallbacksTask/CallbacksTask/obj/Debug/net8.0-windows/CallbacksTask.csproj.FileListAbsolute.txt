@@ -19,3 +19,4 @@ C:\Users\lisa\Documents\GitHub\TrainingTasks\CallbacksTask\CallbacksTask\obj\Deb
 C:\Users\lisa\Documents\GitHub\TrainingTasks\CallbacksTask\CallbacksTask\obj\Debug\net8.0-windows\CallbacksTask.genruntimeconfig.cache
 C:\Users\lisa\Documents\GitHub\TrainingTasks\CallbacksTask\CallbacksTask\obj\Debug\net8.0-windows\ref\CallbacksTask.dll
 C:\Users\lisa\Documents\GitHub\TrainingTasks\CallbacksTask\CallbacksTask\bin\Debug\net8.0-windows\log4net.config
+C:\Users\lisa\Documents\GitHub\TrainingTasks\CallbacksTask\CallbacksTask\bin\Debug\net8.0-windows\ConcurrentCollections.dll
