@@ -113,3 +113,50 @@
 2023-12-19 11:57:15,226 INFO - Callback unsubscribed from Even event
 2023-12-19 11:57:17,046 INFO - Callback subscribed from Odd event
 2023-12-19 11:57:18,649 INFO - Unsubscribed from both events
+2023-12-19 12:53:51,039 INFO - Application starting...
+2023-12-19 12:53:53,738 ERROR - Subscribed to both events
+2023-12-19 12:53:57,018 ERROR - Callback subscribed to Even event
+2023-12-19 12:54:02,943 ERROR - Callback subscribed to Odd event
+2023-12-19 12:54:08,064 ERROR - Callback unsubscribed from Even event
+2023-12-19 12:54:11,140 ERROR - Callback subscribed from Odd event
+2023-12-19 12:54:13,009 ERROR - Callback subscribed to Odd event
+2023-12-19 12:54:17,033 ERROR - Callback subscribed from Odd event
+2023-12-19 12:54:18,579 ERROR - Unsubscribed from both events
+2023-12-19 12:54:20,397 ERROR - Unsubscribed from both events
+2023-12-19 12:56:56,928 INFO - Application starting...
+2023-12-19 12:56:58,956 ERROR - Subscribed to BothEvents
+2023-12-19 12:57:01,708 ERROR - Unsubscribed from BothEvents
+2023-12-19 12:57:02,338 ERROR - Callback subscribed to EvenEvent
+2023-12-19 12:57:05,340 ERROR - Callback subscribed to OddEvent
+2023-12-19 12:57:11,254 ERROR - Callback unsubscribed from OddEvent
+2023-12-19 12:57:13,914 ERROR - Callback unsubscribed from EvenEvent
+2023-12-19 12:57:15,409 ERROR - Unsubscribed from BothEvents
+2023-12-19 12:57:16,777 ERROR - Unsubscribed from BothEvents
+2023-12-19 12:59:09,807 INFO - Application starting...
+2023-12-19 12:59:11,749 ERROR - Subscribed to BothEvents
+2023-12-19 12:59:17,384 ERROR - Unsubscribed from BothEvents
+2023-12-19 12:59:18,792 ERROR - Callback subscribed to EvenEvent
+2023-12-19 12:59:28,348 ERROR - Callback unsubscribed from EvenEvent
+2023-12-19 12:59:57,581 INFO - Application starting...
+2023-12-19 12:59:59,773 INFO - Subscribed to BothEvents
+2023-12-19 13:00:01,420 INFO - Callback subscribed to EvenEvent
+2023-12-19 13:00:07,350 INFO - Callback subscribed to OddEvent
+2023-12-19 13:00:09,724 INFO - Callback unsubscribed from EvenEvent
+2023-12-19 13:00:10,419 INFO - Callback unsubscribed from OddEvent
+2023-12-19 13:00:11,122 INFO - Unsubscribed from BothEvents
+2023-12-19 13:00:12,465 INFO - Unsubscribed from BothEvents
+2023-12-19 13:34:06,673 INFO - Application starting...
+2023-12-19 13:34:08,369 INFO - Start button on BothEvents clicked
+2023-12-19 13:34:08,369 INFO - Subscribed to BothEvents
+2023-12-19 13:34:12,266 INFO - Start button on EvenEvent clicked
+2023-12-19 13:34:12,266 INFO - Callback subscribed to EvenEvent
+2023-12-19 13:34:14,278 INFO - Start button on OddEvent clicked
+2023-12-19 13:34:14,279 INFO - Callback subscribed to OddEvent
+2023-12-19 13:34:21,750 INFO - Stop button on BothEvents clicked
+2023-12-19 13:34:21,751 INFO - Unsubscribed from BothEvents
+2023-12-19 13:34:22,542 INFO - Stop button on EvenEvent clicked
+2023-12-19 13:34:22,542 INFO - Callback unsubscribed from EvenEvent
+2023-12-19 13:34:23,170 INFO - Stop button on OddEvent clicked
+2023-12-19 13:34:23,171 INFO - Callback unsubscribed from OddEvent
+2023-12-19 13:34:25,126 INFO - Application is closing
+2023-12-19 13:34:25,126 INFO - Unsubscribed from BothEvents

@@ -1,83 +1,28 @@
 ﻿using log4net;
-using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using static CallbacksTask.Logger;
 
 namespace CallbacksTask
 {
-    public class Logger : ILogger
+    internal class Logger : ILogger
     {
-        public delegate void MessageCallback(object sender, SimpleEventArgs e);
+        private static readonly ILog log = LogManager.GetLogger(typeof(Logger));
 
+        private static readonly Logger instance = new Logger();
 
-        public event MessageCallback EvenMessageReceivedEvent;
-        public event MessageCallback OddMessageReceivedEvent; 
+        public static Logger Instance => instance;
 
-        private System.Threading.Timer timer;
-              
-        public void StartMessaging()
+        public void LogError(string message)
         {
-            try
-            {
-                if (timer != null)
-                {
-                    return;
-                }
-               
-                timer = new System.Threading.Timer(PrintMessage, null, 0, 1000);
-                
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            log.Error(message);
         }
 
-        private void PrintMessage(object state)
+        public void LogInfo(string message)
         {
-            string printMessage = $"Log entry at {DateTime.Now}";
-            SimpleEventArgs args = new SimpleEventArgs(printMessage);
-            
-            try
-            {
-                if ( DateTime.Now.Second % 2 ==0)
-                {
-                    EvenMessageReceivedEvent?.Invoke(this, args);
-                }
-                else 
-                {
-                    OddMessageReceivedEvent?.Invoke(this, args);
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public void StopMessaging()
-        {
-            try
-            {
-            timer?.Dispose();
-                timer = null;
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            log.Info(message);
         }
     }
 }
-
-
-

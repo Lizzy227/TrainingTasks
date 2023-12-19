@@ -34,7 +34,7 @@
             btnStopEvenCallback = new Button();
             btnStartEvenCallback = new Button();
             tbEvenEvents = new TextBox();
-            lbAll = new Label();
+            lbBoth = new Label();
             lbEven = new Label();
             lbOdd = new Label();
             btnStopOddCallback = new Button();
@@ -58,7 +58,7 @@
             btnStartLogs.TabIndex = 1;
             btnStartLogs.Text = "Start";
             btnStartLogs.UseVisualStyleBackColor = true;
-            btnStartLogs.Click += btnStartMessaging_Click;
+            btnStartLogs.Click += btnStartBoth_Click;
             // 
             // btnStopLogs
             // 
@@ -68,7 +68,7 @@
             btnStopLogs.TabIndex = 2;
             btnStopLogs.Text = "Stop";
             btnStopLogs.UseVisualStyleBackColor = true;
-            btnStopLogs.Click += btnStopMessaging_Click;
+            btnStopLogs.Click += btnStopBoth_Click;
             // 
             // btnStopEvenCallback
             // 
@@ -78,7 +78,7 @@
             btnStopEvenCallback.TabIndex = 5;
             btnStopEvenCallback.Text = "Stop";
             btnStopEvenCallback.UseVisualStyleBackColor = true;
-            btnStopEvenCallback.Click += btnStopEvenCallback_Click;
+            btnStopEvenCallback.Click += btnStopEven_Click;
             // 
             // btnStartEvenCallback
             // 
@@ -88,7 +88,7 @@
             btnStartEvenCallback.TabIndex = 4;
             btnStartEvenCallback.Text = "Start";
             btnStartEvenCallback.UseVisualStyleBackColor = true;
-            btnStartEvenCallback.Click += btnStartEvenCallback_Click;
+            btnStartEvenCallback.Click += btnStartEven_Click;
             // 
             // tbEvenEvents
             // 
@@ -98,14 +98,14 @@
             tbEvenEvents.Size = new Size(241, 410);
             tbEvenEvents.TabIndex = 3;
             // 
-            // lbAll
+            // lbBoth
             // 
-            lbAll.AutoSize = true;
-            lbAll.Location = new Point(153, 20);
-            lbAll.Name = "lbAll";
-            lbAll.Size = new Size(21, 15);
-            lbAll.TabIndex = 6;
-            lbAll.Text = "All";
+            lbBoth.AutoSize = true;
+            lbBoth.Location = new Point(153, 20);
+            lbBoth.Name = "lbBoth";
+            lbBoth.Size = new Size(32, 15);
+            lbBoth.TabIndex = 6;
+            lbBoth.Text = "Both";
             // 
             // lbEven
             // 
@@ -133,7 +133,7 @@
             btnStopOddCallback.TabIndex = 10;
             btnStopOddCallback.Text = "Stop";
             btnStopOddCallback.UseVisualStyleBackColor = true;
-            btnStopOddCallback.Click += btnStopOddCallback_Click;
+            btnStopOddCallback.Click += btnStopOdd_Click;
             // 
             // btnStartOddCallback
             // 
@@ -143,7 +143,7 @@
             btnStartOddCallback.TabIndex = 9;
             btnStartOddCallback.Text = "Start";
             btnStartOddCallback.UseVisualStyleBackColor = true;
-            btnStartOddCallback.Click += btnStartOddCallback_Click;
+            btnStartOddCallback.Click += btnStartOdd_Click;
             // 
             // tbOddEvents
             // 
@@ -163,7 +163,7 @@
             Controls.Add(btnStartOddCallback);
             Controls.Add(tbOddEvents);
             Controls.Add(lbEven);
-            Controls.Add(lbAll);
+            Controls.Add(lbBoth);
             Controls.Add(btnStopEvenCallback);
             Controls.Add(btnStartEvenCallback);
             Controls.Add(tbEvenEvents);
@@ -185,7 +185,7 @@
         private Button btnStopEvenCallback;
         private Button btnStartEvenCallback;
         private TextBox tbEvenEvents;
-        private Label lbAll;
+        private Label lbBoth;
         private Label lbEven;
         private Label lbOdd;
         private Button btnStopOddCallback;
