@@ -49,6 +49,7 @@
             txbExpression.Name = "txbExpression";
             txbExpression.Size = new Size(186, 23);
             txbExpression.TabIndex = 1;
+            txbExpression.KeyPress += txbExpression_KeyPress;
             // 
             // lblResult
             // 

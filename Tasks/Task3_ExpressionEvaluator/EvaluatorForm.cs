@@ -28,5 +28,15 @@ namespace Task3_ExpressionEvaluator
             //TODO hide label until result is retrieved
             //TODO get result of expression printed here
         }
+
+        private void txbExpression_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            HashSet<char> validCharacters = new HashSet<char> { '(', ')', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.' };
+
+            if (!validCharacters.Contains(e.KeyChar))
+            {                
+                e.Handled = true;
+            }
+        }
     }
 }
