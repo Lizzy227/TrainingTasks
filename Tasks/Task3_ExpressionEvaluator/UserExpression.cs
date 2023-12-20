@@ -12,7 +12,7 @@ namespace Task3_ExpressionEvaluator
     {
 
     private readonly EvaluatorForm winForm;
-        public string ProcessedExpression {  get; private set; }
+        public string Expression {  get; private set; }
 
         public UserExpression(EvaluatorForm Form)
         {
@@ -22,12 +22,16 @@ namespace Task3_ExpressionEvaluator
 
         private void ProcessUserInput(object sender, string expression)
         {
-            
-            ProcessedExpression = expression.Replace(" ", "");
-            bool validExpression = IsValidExpression(ProcessedExpression);
+
+            Expression = expression.Replace(" ", "");
+            bool validExpression = IsValidExpression(Expression);
             if (!validExpression)
             {
                 ShowErrorMessage("Please enter a valid expression. For a valid expression these operators (/, *, +, -), equal pairs of parenthesis, and numbers from 0 to 9 can be used.");
+            }
+            else
+            {
+
             }
 
         }

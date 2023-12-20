@@ -1,6 +1,6 @@
 using System;
 using System.Threading;
-using log4net;
+using log4net.Core;
 using log4net.Config;
 
 namespace CallbacksTask
@@ -10,7 +10,7 @@ namespace CallbacksTask
 
         private SimpleMessageProvider simpleMessageProvider;
         private Subscribers subscribers;
-        private ILogger logger = Logger.Instance;
+        
         public Form1()
         {
             InitializeComponent();
@@ -25,14 +25,14 @@ namespace CallbacksTask
         private void btnStartBoth_Click(object sender, EventArgs e)
         {
             try
-            {
-                logger?.LogInfo("Start button on BothEvents clicked");
+            {               
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Start button on BothEvents clicked", null);
                 subscribers.SubscribeToBothMessageEvents(simpleMessageProvider);
                 simpleMessageProvider.StartMessaging();
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error clicking Start button on BothEvents: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error clicking Start button on BothEvents: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -40,13 +40,13 @@ namespace CallbacksTask
         private void btnStopBoth_Click(object sender, EventArgs e)
         {
             try
-            {
-                logger?.LogInfo("Stop button on BothEvents clicked");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Stop button on BothEvents clicked", null);
                 subscribers.UnsubscribeFromBothMessageEvents(simpleMessageProvider);
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error clicking Stop button on BothEvents: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error clicking Stop button on BothEvents: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -56,14 +56,14 @@ namespace CallbacksTask
         private void btnStartEven_Click(object sender, EventArgs e)
         {
             try
-            {
-                logger?.LogInfo("Start button on EvenEvent clicked");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Start button on EvenEvent clicked", null);
                 SimpleMessageProvider.MessageCallback evenCallback = subscribers.HandleEvenMessageEvent;
                 subscribers.SubscribeToEvenMessagesEvent(simpleMessageProvider, evenCallback);
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error clicking Start button on EvenEvent: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error clicking Start button on EvenEvent: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -71,14 +71,14 @@ namespace CallbacksTask
         private void btnStopEven_Click(object sender, EventArgs e)
         {
             try
-            {
-                logger?.LogInfo("Stop button on EvenEvent clicked");
+            {               
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Stop button on EvenEvent clicked", null);
                 SimpleMessageProvider.MessageCallback evenCallback = subscribers.HandleEvenMessageEvent;
                 subscribers.UnsubscribeFromEvenMessagesEvent(simpleMessageProvider, evenCallback);
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error clicking Stop button on EvenEvent: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error clicking Stop button on EvenEvent: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -86,14 +86,14 @@ namespace CallbacksTask
         private void btnStartOdd_Click(object sender, EventArgs e)
         {
             try
-            {
-                logger?.LogInfo("Start button on OddEvent clicked");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Start button on OddEvent clicked", null);
                 SimpleMessageProvider.MessageCallback oddCallback = subscribers.HandleOddMessageEvent;
                 subscribers.SubscribeToOddMessagesEvent(simpleMessageProvider, oddCallback);
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error clicking Start button on OddEvent: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error clicking Start button on OddEvent: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -101,14 +101,14 @@ namespace CallbacksTask
         private void btnStopOdd_Click(object sender, EventArgs e)
         {
             try
-            {
-                logger?.LogInfo("Stop button on OddEvent clicked");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Stop button on OddEvent clicked", null);
                 SimpleMessageProvider.MessageCallback oddCallback = subscribers.HandleOddMessageEvent;
                 subscribers.UnsubscribeFromOddMessagesEvent(simpleMessageProvider, oddCallback);
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error clicking Stop button on OddEvent: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error clicking Stop button on OddEvent: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -122,12 +122,12 @@ namespace CallbacksTask
                 subscribers.UnsubscribeFromBothMessageEvents(simpleMessageProvider);
                 subscribers.UnsubscribeFromEvenMessagesEvent(simpleMessageProvider, evenCallback);
                 subscribers.UnsubscribeFromOddMessagesEvent(simpleMessageProvider, oddCallback);
-
-                logger?.LogInfo("Application is closing");
+                                
+                Logger.Instance.Log(typeof(Form1), Level.Info, "Application is closing", null);
             }
             catch (Exception ex)
-            {
-                logger?.LogError($"Error in Application closing: {ex.Message}");
+            {                
+                Logger.Instance.Log(typeof(Form1), Level.Error, $"Error in Application closing: {ex.Message}", null);
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

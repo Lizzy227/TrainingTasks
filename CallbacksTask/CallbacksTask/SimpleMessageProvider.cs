@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using log4net.Core;
 using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace CallbacksTask
 {
     public class SimpleMessageProvider
     {
-        private ILogger logger = Logger.Instance;
+        
         public delegate void MessageCallback(object sender, SimpleEventArgs e);
         public event MessageCallback EvenMessageReceivedEvent;
         public event MessageCallback OddMessageReceivedEvent;
@@ -22,7 +22,7 @@ namespace CallbacksTask
         {
             try
             {
-            logger?.LogInfo("Starting Timer if no timer is instantiated");
+            Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Info,"Starting Timer if no timer is instantiated", null);
                 if (timer != null)
                 {
                     return;
@@ -33,8 +33,7 @@ namespace CallbacksTask
             }
             catch (Exception ex)
             {
-
-                logger?.LogError($"Error when starting Timer: {ex.Message}");
+                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when starting Timer: {ex.Message}", null);                
             }
         }
 
@@ -56,8 +55,7 @@ namespace CallbacksTask
             }
             catch (Exception ex)
             {
-
-                logger?.LogError($"Error when Printing Message: {ex.Message}");
+                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when Printing Message: {ex.Message}", null);                
             }
         }
 
@@ -66,13 +64,12 @@ namespace CallbacksTask
             try
             {
                 timer?.Dispose();
-                timer = null;
-                logger?.LogInfo("Timer disposed");
+                timer = null;                
+                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Info, "Timer disposed", null);
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error when Stopping Timer: {ex.Message}");
+            {                                
+                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when Stopping Timer: {ex.Message}", null);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using log4net;
+using log4net.Core;
 using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace CallbacksTask
 {
     internal class Subscribers
     {
-        private ILogger logger = Logger.Instance;
+       
 
         private HashSet<SimpleMessageProvider.MessageCallback> subscribedEvenCallbacks = new HashSet<SimpleMessageProvider.MessageCallback>();
         private HashSet<SimpleMessageProvider.MessageCallback> subscribedOddCallbacks = new HashSet<SimpleMessageProvider.MessageCallback>();
@@ -33,13 +34,12 @@ namespace CallbacksTask
             try
             {
                 simpleMessageProvider.EvenMessageReceivedEvent += HandleBothMessageEvent;
-                simpleMessageProvider.OddMessageReceivedEvent += HandleBothMessageEvent;
-                logger?.LogInfo("Subscribed to BothEvents");
+                simpleMessageProvider.OddMessageReceivedEvent += HandleBothMessageEvent;                
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "Subscribed to BothEvents", null);
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error subscribing to BothEvents: {ex.Message}");
+            {                               
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error subscribing to BothEvents: {ex.Message}", null);
             }
         }
 
@@ -55,12 +55,11 @@ namespace CallbacksTask
 
                 simpleMessageProvider.EvenMessageReceivedEvent += evenCallback;
                 subscribedEvenCallbacks.Add(evenCallback);
-                logger?.LogInfo("Subscribed to EvenEvent");
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "Subscribed to EvenEvent", null);                
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error subscribing to EvenEvent: {ex.Message}");
+            {                                
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error subscribing to EvenEvent: {ex.Message}", null);
             }
 
         }
@@ -75,14 +74,13 @@ namespace CallbacksTask
             try
             {
                 simpleMessageProvider.OddMessageReceivedEvent += oddCallback;
-                subscribedOddCallbacks.Add(oddCallback);
-                logger?.LogInfo("Subscribed to OddEvent");
+                subscribedOddCallbacks.Add(oddCallback);                
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "Subscribed to OddEvent", null);
 
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error subscribing to OddEvent: {ex.Message}");
+            {                                
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error subscribing to OddEvent: {ex.Message}", null);
             }
 
         }
@@ -92,20 +90,19 @@ namespace CallbacksTask
             try
             {
                 simpleMessageProvider.EvenMessageReceivedEvent -= HandleBothMessageEvent;
-                simpleMessageProvider.OddMessageReceivedEvent -= HandleBothMessageEvent;
-                logger?.LogInfo("Unsubscribed from BothEvents");
+                simpleMessageProvider.OddMessageReceivedEvent -= HandleBothMessageEvent;               
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "Unsubscribed from BothEvents", null);
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error unsubscribing from BothEvents: {ex.Message}");
+            {                                
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error unsubscribing from BothEvents: {ex.Message}", null);
             }
         }
         public void UnsubscribeFromEvenMessagesEvent(SimpleMessageProvider simpleMessageProvider, SimpleMessageProvider.MessageCallback evenCallback)
         {
             if (!subscribedEvenCallbacks.Contains(evenCallback))
-            {
-                logger?.LogInfo("There's no EvenEvent to unsubscribe from");
+            {                
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "There's no EvenEvent to unsubscribe from", null);
                 return;
             }
 
@@ -113,35 +110,33 @@ namespace CallbacksTask
             {
 
                 simpleMessageProvider.EvenMessageReceivedEvent -= evenCallback;
-                subscribedEvenCallbacks.Remove(evenCallback);
-                logger?.LogInfo("Unsubscribed from EvenEvent");
+                subscribedEvenCallbacks.Remove(evenCallback);                
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "Unsubscribed from EvenEvent", null);
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error unsubscribing from EvenEvent: {ex.Message}");
+            {                                
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error unsubscribing from EvenEvent: {ex.Message}", null);
             }
         }
 
         public void UnsubscribeFromOddMessagesEvent(SimpleMessageProvider simpleMessageProvider, SimpleMessageProvider.MessageCallback oddCallback)
         {
             if (!subscribedOddCallbacks.Contains(oddCallback))
-            {
-                logger?.LogInfo("There's no OddEvent to unsubscribe from");
+            {                
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "There's no OddEvent to unsubscribe from", null);
                 return;
             }
 
             try
             {
                 simpleMessageProvider.OddMessageReceivedEvent -= oddCallback;
-                subscribedOddCallbacks.Remove(oddCallback);
-                logger?.LogInfo("Unsubscribed from OddEvent");
+                subscribedOddCallbacks.Remove(oddCallback);                
+                Logger.Instance.Log(typeof(Subscribers), Level.Info, "Unsubscribed from OddEvent", null);
 
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error unsubscribing from OddEvent: {ex.Message}");
+            {                                
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error unsubscribing from OddEvent: {ex.Message}", null);
             }
 
 
@@ -180,9 +175,8 @@ namespace CallbacksTask
                 }
             }
             catch (Exception ex)
-            {
-
-                logger?.LogError($"Error updating textbox: {ex.Message}");
+            {                               
+                Logger.Instance.Log(typeof(Subscribers), Level.Error, $"Error updating textbox: {ex.Message}", null);
             }
         }
     }

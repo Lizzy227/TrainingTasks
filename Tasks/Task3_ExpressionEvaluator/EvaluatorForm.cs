@@ -25,14 +25,8 @@ namespace Task3_ExpressionEvaluator
 
         public void UpdatelblResult(bool validexpression)
         {
-            if (!validexpression)
-            {
-                lblResult.Text = "Expression not valid";
-            }
-            else
-            {
-                lblResult.Text = "Expression is valid";
-            }
+            //TODO hide label until result is retrieved
+            //TODO get result of expression printed here
         }
     }
 }
