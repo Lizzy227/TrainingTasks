@@ -10,8 +10,8 @@ namespace Task3_ExpressionEvaluator
 {
     internal class UserExpression
     {
-
-    private readonly EvaluatorForm winForm;
+        public ExpressionCalculator expressionCalculator = new ExpressionCalculator();
+        private readonly EvaluatorForm winForm;
         public string Expression {  get; private set; }
 
         public UserExpression(EvaluatorForm Form)
@@ -22,23 +22,34 @@ namespace Task3_ExpressionEvaluator
 
         private void ProcessUserInput(object sender, string expression)
         {
-
+            try
+            {
             Expression = expression.Replace(" ", "");
             bool validParenthesesExpression = IsValidParentheses(Expression);
-            if (!validParenthesesExpression)
+            bool validExpression = IsValidSyntax(Expression);
+            if (!validParenthesesExpression || !validExpression)
             {
-                ShowErrorMessage("Please enter a valid expression. For a valid expression use these operators (/, *, +, -), equal pairs of parenthesis, and numbers from 0 to 9.");
+                ShowErrorMessage("Please enter a valid expression.");
             }
             else
             {
-              IsValidSyntax(Expression);
+                double result = expressionCalculator.EvaluateExpression(Expression);
+                winForm.UpdatelblResult(result);
+            }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
         }
         public bool IsValidParentheses(string expression)
         {
             int parenthesesCounter = 0;
-
+            try
+            {
             foreach (char c in expression)
             {
                 if (c == '(')
@@ -56,13 +67,22 @@ namespace Task3_ExpressionEvaluator
             }
 
             return parenthesesCounter == 0;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
                         
         }
 
         public bool IsValidSyntax(string expression)
         {
             HashSet<char> validOperators = new HashSet<char> { '+', '-', '*', '/', '.' };
-
+            try
+            {
             for (int i = 0; i < expression.Length; i++)
             {
                 char currentChar = expression[i];
@@ -87,12 +107,29 @@ namespace Task3_ExpressionEvaluator
 
             return true; 
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
 
         private bool IsValidCharacter(char c)
         {
             HashSet<char> validCharacters = new HashSet<char> { '(', ')', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            try
+            {
+
             return validCharacters.Contains(c);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void ShowErrorMessage(string message)

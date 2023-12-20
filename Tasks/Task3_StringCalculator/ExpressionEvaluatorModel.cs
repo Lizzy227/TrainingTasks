@@ -32,9 +32,7 @@ namespace Task3_ExpressionEvaluator
             MultiValue = "";
 
             Precedence = new Dictionary<char, int>
-        {
-                { '(', 3 },
-                {')', 3},
+        {               
             {'+', 1 },
             {'-', 1 },
             {'*', 2 },

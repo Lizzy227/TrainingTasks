@@ -10,6 +10,7 @@ namespace Task3_ExpressionEvaluator
         {
             InitializeComponent();
             userExpression = new UserExpression(this);
+            lblResult.Visible = false;
         }
 
         private void btEvaluate_Click(object sender, EventArgs e)
@@ -23,15 +24,15 @@ namespace Task3_ExpressionEvaluator
 
         }
 
-        public void UpdatelblResult(bool validexpression)
+        public void UpdatelblResult(double result)
         {
-            //TODO hide label until result is retrieved
-            //TODO get result of expression printed here
+            lblResult.Visible = true;
+            lblResult.Text = result.ToString();           
         }
 
         private void txbExpression_KeyPress(object sender, KeyPressEventArgs e)
         {
-            HashSet<char> validCharacters = new HashSet<char> { '(', ')', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.' };
+            HashSet<char> validCharacters = new HashSet<char> { ' ','(', ')', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.' };
 
             if (!validCharacters.Contains(e.KeyChar))
             {                

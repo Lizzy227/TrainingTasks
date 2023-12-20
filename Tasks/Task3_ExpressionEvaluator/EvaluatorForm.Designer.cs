@@ -35,7 +35,7 @@
             // 
             // btEvaluate
             // 
-            btEvaluate.Location = new Point(206, 168);
+            btEvaluate.Location = new Point(201, 170);
             btEvaluate.Name = "btEvaluate";
             btEvaluate.Size = new Size(75, 23);
             btEvaluate.TabIndex = 0;
@@ -56,11 +56,11 @@
             lblResult.AutoSize = true;
             lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblResult.ForeColor = Color.Fuchsia;
-            lblResult.Location = new Point(206, 99);
+            lblResult.Location = new Point(228, 103);
             lblResult.Name = "lblResult";
-            lblResult.Size = new Size(69, 30);
+            lblResult.Size = new Size(24, 30);
             lblResult.TabIndex = 2;
-            lblResult.Text = "Result";
+            lblResult.Text = "0";
             // 
             // EvaluatorForm
             // 
