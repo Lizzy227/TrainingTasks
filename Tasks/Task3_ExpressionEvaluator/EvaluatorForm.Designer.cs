@@ -55,7 +55,7 @@
             // 
             lblResult.AutoSize = true;
             lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblResult.ForeColor = Color.Fuchsia;
+            lblResult.ForeColor = Color.Green;
             lblResult.Location = new Point(228, 103);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(24, 30);
