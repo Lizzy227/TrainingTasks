@@ -24,54 +24,75 @@ namespace Task3_ExpressionEvaluator
         {
 
             Expression = expression.Replace(" ", "");
-            bool validExpression = IsValidCharacters(Expression);
-            if (!validExpression)
+            bool validParenthesesExpression = IsValidParentheses(Expression);
+            if (!validParenthesesExpression)
             {
                 ShowErrorMessage("Please enter a valid expression. For a valid expression use these operators (/, *, +, -), equal pairs of parenthesis, and numbers from 0 to 9.");
             }
             else
             {
-
+              IsValidSyntax(Expression);
             }
 
         }
-        public bool IsValidCharacters(string expression)
+        public bool IsValidParentheses(string expression)
         {
-            
-            HashSet<char> validOperators = new HashSet<char> { '+', '-', '*', '/', '.' };
-            HashSet<char> validCharacters = new HashSet<char> { '(', ')', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-
             int parenthesesCounter = 0;
 
             foreach (char c in expression)
             {
-                if (!validCharacters.Contains(c) && !validOperators.Contains(c))
-                {
-                    return false;
-                }
-                else if (c == '(')
+                if (c == '(')
                 {
                     parenthesesCounter++;
                 }
-                else if (c == ')')
+                if (c == ')')
                 {
                     parenthesesCounter--;
-                    if (parenthesesCounter < 0)
-                    {
-                        
-                        return false;
-                    }
                 }
-                
+                if (parenthesesCounter < 0)
+                {
+                    return false; 
+                }
             }
 
-            return parenthesesCounter == 0; 
+            return parenthesesCounter == 0;
+                        
         }
 
         public bool IsValidSyntax(string expression)
         {
+            HashSet<char> validOperators = new HashSet<char> { '+', '-', '*', '/', '.' };
 
-            return false;
+            for (int i = 0; i < expression.Length; i++)
+            {
+                char currentChar = expression[i];
+
+                if (validOperators.Contains(currentChar))
+                {
+                    
+                    if (i == 0 || i == expression.Length - 1)
+                    {
+                        return false; 
+                    }
+
+                    char prevChar = expression[i - 1];
+                    char nextChar = expression[i + 1];
+
+                    if (prevChar == '(' || nextChar == ')' || !IsValidCharacter(nextChar))
+                    {
+                        return false; 
+                    }
+                }
+            }
+
+            return true; 
+
+        }
+
+        private bool IsValidCharacter(char c)
+        {
+            HashSet<char> validCharacters = new HashSet<char> { '(', ')', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            return validCharacters.Contains(c);
         }
 
         private void ShowErrorMessage(string message)
