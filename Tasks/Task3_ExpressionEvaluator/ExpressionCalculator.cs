@@ -13,8 +13,7 @@ namespace Task3_ExpressionEvaluator
         public string MultiValue { get; set; }
         public double MultiValueAsDouble { get; set; }
         public Stack<double> Operands { get; set; }
-        public Stack<char> Operators { get; set; }       
-
+        public Stack<char> Operators { get; set; }
         public Dictionary<char, int> Precedence { get; set; }
 
         public ExpressionCalculator()
@@ -72,12 +71,10 @@ namespace Task3_ExpressionEvaluator
                 {
                     if (MultiValue.Length > 0)
                     {
-                        MultiValueAsDouble = double.Parse(MultiValue, CultureInfo.InvariantCulture);
-                        Operands.Push(MultiValueAsDouble);
-                        MultiValue = "";
-                    }
+                            PushMultiValue();
+                        }
 
-                    while (Operators.Count > 0 && Precedence[c] <= Precedence[Operators.Peek()] && Operators.Peek() != '(')
+                    while (Operators.Count > 0 && Precedence[c] <= Precedence[Operators.Peek()])
                     {
                         ProcessOperations(Operands, Operators);
                     }
@@ -86,16 +83,12 @@ namespace Task3_ExpressionEvaluator
                 }
                 else if (MultiValue.Length > 0)
                 {
-                    MultiValueAsDouble = double.Parse(MultiValue, CultureInfo.InvariantCulture);
-                    Operands.Push(MultiValueAsDouble);
-                    MultiValue = "";
+                        PushMultiValue();
                 }
             }
             if (MultiValue.Length > 0)
             {
-                MultiValueAsDouble = double.Parse(MultiValue, CultureInfo.InvariantCulture);
-                Operands.Push(MultiValueAsDouble);
-                MultiValue = "";
+                    PushMultiValue();
             }
             while (Operands.Count > 1)
             {
@@ -110,6 +103,13 @@ namespace Task3_ExpressionEvaluator
                 throw;
             }
 
+        }
+
+        private void PushMultiValue()
+        {
+            MultiValueAsDouble = double.Parse(MultiValue, CultureInfo.InvariantCulture);
+            Operands.Push(MultiValueAsDouble);
+            MultiValue = "";
         }
 
         static void ProcessOperations(Stack<double> operands, Stack<char> operators)
