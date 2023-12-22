@@ -6,7 +6,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using static CallbacksTask.SimpleMessageProvider;
 
 namespace CallbacksTask
 {
@@ -16,13 +15,18 @@ namespace CallbacksTask
         public delegate void MessageCallback(object sender, SimpleEventArgs e);
         public event MessageCallback EvenMessageReceivedEvent;
         public event MessageCallback OddMessageReceivedEvent;
+
+        //Keats: I see what you did here, however our convention is to use
+        //public event EventHandler<SimpleEventArgs> EvenMessageReceivedEvent;
+        //public event EventHandler<SimpleEventArgs> OddMessageReceivedEvent;
+
         private System.Threading.Timer timer;
 
         public void StartMessaging()
         {
             try
             {
-            Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Info,"Starting Timer if no timer is instantiated", null);
+                LizLogger.Instance.Log(typeof(SimpleMessageProvider), Level.Info,"Starting Timer if no timer is instantiated", null);
                 if (timer != null)
                 {
                     return;
@@ -33,7 +37,7 @@ namespace CallbacksTask
             }
             catch (Exception ex)
             {
-                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when starting Timer: {ex.Message}", null);                
+                LizLogger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when starting Timer: {ex.Message}", null);                
             }
         }
 
@@ -55,7 +59,7 @@ namespace CallbacksTask
             }
             catch (Exception ex)
             {
-                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when Printing Message: {ex.Message}", null);                
+                LizLogger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when Printing Message: {ex.Message}", null);                
             }
         }
 
@@ -65,11 +69,11 @@ namespace CallbacksTask
             {
                 timer?.Dispose();
                 timer = null;                
-                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Info, "Timer disposed", null);
+                LizLogger.Instance.Log(typeof(SimpleMessageProvider), Level.Info, "Timer disposed", null);
             }
             catch (Exception ex)
             {                                
-                Logger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when Stopping Timer: {ex.Message}", null);
+                LizLogger.Instance.Log(typeof(SimpleMessageProvider), Level.Error, $"Error when Stopping Timer: {ex.Message}", null);
             }
         }
     }
