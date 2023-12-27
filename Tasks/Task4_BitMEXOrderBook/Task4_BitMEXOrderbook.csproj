@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="realtaiizor" Version="3.7.9.6" />
   </ItemGroup>
 
 </Project>

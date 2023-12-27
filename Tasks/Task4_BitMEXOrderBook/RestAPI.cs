@@ -10,11 +10,12 @@ using System.Net.Http.Headers;
 
 namespace Task4_BitMEXOrderbook
 {
-    internal class APIServices
+    internal class RestAPI
     {
         private readonly HttpClient client;
 
-        public APIServices()
+
+        public RestAPI()
         {
             client = new HttpClient();
             client.BaseAddress = new Uri("https://testnet.bitmex.com/api/v1"); 
@@ -27,16 +28,17 @@ namespace Task4_BitMEXOrderbook
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<Orderbook> GetOrderBookAsync(string symbol)
+        public async Task<List<OrderbookEntry>> GetOrderBookAsync(string symbol)
         {
             try
             {
-                using (HttpResponseMessage response = await client.GetAsync($"/orderbook/L2?symbol={symbol}&depth=25"))
+                using (HttpResponseMessage response = await client.GetAsync(client.BaseAddress + $"/orderBook/L2?symbol={symbol}&depth=25"))
                 if (response.IsSuccessStatusCode)
                 {
+                        List<OrderbookEntry> entries = new List<OrderbookEntry>();
                     string responseBody = await response.Content.ReadAsStringAsync();
-                    Orderbook orderBook = JsonConvert.DeserializeObject<Orderbook>(responseBody);
-                    return orderBook;
+                    entries = JsonConvert.DeserializeObject<List<OrderbookEntry>>(responseBody);
+                    return entries;
                 }
                 else
                 {
