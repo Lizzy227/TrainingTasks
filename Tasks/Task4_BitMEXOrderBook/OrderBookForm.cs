@@ -9,7 +9,8 @@ namespace Task4_BitMEXOrderbook
         private readonly RestAPI apiServices;
         private readonly Orderbook orderBook;
 
-        WebSocketAPI webAPI = WebSocketAPI.Instance;
+        WebSocketAPI webAPIInstance = WebSocketAPI.Instance;
+        WebSocketHandler webHandlerInstance = WebSocketHandler.Instance;
 
         public OrderBookForm()
         {
@@ -34,11 +35,8 @@ namespace Task4_BitMEXOrderbook
             }
             else
             {
-                await webAPI.Connect("wss://ws.bitmex.com/realtime?subscribe=orderBookL2_25:XBTUSD");
+                await webAPIInstance.Connect("wss://ws.bitmex.com/realtime?subscribe=orderBookL2_25:XBTUSD");
             }
-            
-
-
         }
 
         private void rbtnREST_CheckedChanged(object sender, EventArgs e)
@@ -58,6 +56,25 @@ namespace Task4_BitMEXOrderbook
             {
 
                 throw;
+            }
+        }
+
+        bool subOrUnsub = false;
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            SubOrUnsub();
+        }
+        void SubOrUnsub()
+        {
+            if (subOrUnsub)
+            {
+                webHandlerInstance.Subscribe("update", MessageHandler.HandleUpdateMessage);
+                subOrUnsub = false;
+            }
+            else
+            {
+                webHandlerInstance.Unsubscribe("update");
+                subOrUnsub = true;
             }
         }
     }

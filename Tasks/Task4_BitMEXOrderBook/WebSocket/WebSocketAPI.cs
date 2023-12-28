@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace Task4_BitMEXOrderbook.WebSocket
 {
@@ -41,11 +42,40 @@ namespace Task4_BitMEXOrderbook.WebSocket
                 if (result.MessageType == WebSocketMessageType.Text)
                 {
                     string receivedMessage = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                    Console.WriteLine($"Received: {receivedMessage}");
+
+                    // Extract the "action" field from the received message
+                    string actionType = ExtractActionType(receivedMessage);
+
+                    // Pass the "action" field to the EventCallback method
+                    WebSocketHandler.Instance.EventCallback(actionType, receivedMessage);
 
                     // Process the received message as needed
                 }
             }
+        }
+
+        private string ExtractActionType(string message)
+        {
+            // Implement your JSON parsing logic to extract the "action" field
+            // For example, assuming a JSON-like structure {"action": "Type", "otherField": "value"}
+            // You might use a JSON library or manual parsing
+            try
+            {
+                JObject jsonObject = JObject.Parse(message);
+                JToken actionToken = jsonObject["action"];
+
+                if (actionToken != null)
+                {
+                    return actionToken.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                // Handle JSON parsing errors
+            }
+
+            // Default to a generic type if extraction fails
+            return "Generic";
         }
 
         public async Task Send(string message)

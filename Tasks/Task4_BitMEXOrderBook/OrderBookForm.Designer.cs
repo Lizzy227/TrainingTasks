@@ -52,6 +52,7 @@
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             rtxtEvents = new RichTextBox();
+            btnSub = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvBids).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAsks).BeginInit();
@@ -256,11 +257,22 @@
             rtxtEvents.TabIndex = 8;
             rtxtEvents.Text = "";
             // 
+            // btnSub
+            // 
+            btnSub.Location = new Point(756, 464);
+            btnSub.Name = "btnSub";
+            btnSub.Size = new Size(75, 23);
+            btnSub.TabIndex = 9;
+            btnSub.Text = "Subscribe";
+            btnSub.UseVisualStyleBackColor = true;
+            btnSub.Click += btnSub_Click;
+            // 
             // OrderBookForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1019, 517);
+            Controls.Add(btnSub);
             Controls.Add(rtxtEvents);
             Controls.Add(dgvAsks);
             Controls.Add(panel1);
@@ -297,5 +309,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private RichTextBox rtxtEvents;
+        private Button btnSub;
     }
 }
