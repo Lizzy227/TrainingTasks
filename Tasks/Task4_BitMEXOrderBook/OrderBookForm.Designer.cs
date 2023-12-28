@@ -51,6 +51,7 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            rtxtEvents = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvBids).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAsks).BeginInit();
@@ -58,9 +59,9 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(258, 459);
+            btnRefresh.Location = new Point(232, 464);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(120, 23);
+            btnRefresh.Size = new Size(168, 23);
             btnRefresh.TabIndex = 0;
             btnRefresh.Text = "Load Data";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -247,11 +248,20 @@
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // rtxtEvents
+            // 
+            rtxtEvents.Location = new Point(598, 81);
+            rtxtEvents.Name = "rtxtEvents";
+            rtxtEvents.Size = new Size(376, 362);
+            rtxtEvents.TabIndex = 8;
+            rtxtEvents.Text = "";
+            // 
             // OrderBookForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(653, 517);
+            ClientSize = new Size(1019, 517);
+            Controls.Add(rtxtEvents);
             Controls.Add(dgvAsks);
             Controls.Add(panel1);
             Controls.Add(lblMarketPrice);
@@ -286,5 +296,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private RichTextBox rtxtEvents;
     }
 }

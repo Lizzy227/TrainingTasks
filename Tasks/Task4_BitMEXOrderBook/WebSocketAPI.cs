@@ -14,6 +14,15 @@ namespace Task4_BitMEXOrderbook
 
         private ClientWebSocket clientWebSocket;
 
+        private static readonly WebSocketAPI instance = new WebSocketAPI();
+
+        private WebSocketAPI()
+        {
+            // here to prevent instantiation
+        }
+
+        public static WebSocketAPI Instance { get { return instance; } }
+
         public async Task Connect(string uri)
         {
             clientWebSocket = new ClientWebSocket();
@@ -33,6 +42,7 @@ namespace Task4_BitMEXOrderbook
                 {
                     string receivedMessage = System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
                     Console.WriteLine($"Received: {receivedMessage}");
+                    
                     // Process the received message as needed
                 }
             }

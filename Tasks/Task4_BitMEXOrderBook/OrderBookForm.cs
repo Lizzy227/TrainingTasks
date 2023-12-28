@@ -1,9 +1,15 @@
+using System;
+using Task4_BitMEXOrderbook;
+
 namespace Task4_BitMEXOrderbook
 {
     public partial class OrderBookForm : Form
     {
         private readonly RestAPI apiServices;
         private readonly Orderbook orderBook;
+
+        WebSocketAPI webAPI = WebSocketAPI.Instance;
+
         public OrderBookForm()
         {
             InitializeComponent();
@@ -11,20 +17,25 @@ namespace Task4_BitMEXOrderbook
             cbSymbols.DataSource = Enum.GetValues(typeof(CurrencySymbols.Currency));
             rbtnREST.Checked = true;
             orderBook = new Orderbook();
-            
-            
-            
         }
 
         private async void btnRefresh_Click(object sender, EventArgs e)
         {
-            if (dgvBids.Rows.Count > 0 || dgvAsks.Rows.Count > 0)
+            if (rbtnREST.Checked)
             {
-                dgvBids.Rows.Clear();
-                dgvAsks.Rows.Clear();
+                if (dgvBids.Rows.Count > 0 || dgvAsks.Rows.Count > 0)
+                {
+                    dgvBids.Rows.Clear();
+                    dgvAsks.Rows.Clear();
+                }
+                var entries = await apiServices.GetOrderBookAsync(cbSymbols.SelectedValue.ToString());
+                orderBook.UpdateGrids(dgvBids, dgvAsks, entries);
             }
-            var entries = await apiServices.GetOrderBookAsync(cbSymbols.SelectedValue.ToString());
-            orderBook.UpdateGrids(dgvBids, dgvAsks, entries);
+            else
+            {
+                await webAPI.Connect("wss://ws.bitmex.com/realtime?subscribe=orderBookL2_25:XBTUSD");
+            }
+            
 
 
         }
@@ -35,13 +46,11 @@ namespace Task4_BitMEXOrderbook
             {
                 if (rbtnREST.Checked)
                 {
-                    btnRefresh.Show();
-                    btnRefresh.Enabled = true;
+                    btnRefresh.Text = "Refresh via REST.";
                 }
                 if (rbtnWebSocket.Checked)
                 {
-                    btnRefresh.Hide();
-
+                    btnRefresh.Text = "Refresh via WebSocket.";
                 }
             }
             catch (Exception)
