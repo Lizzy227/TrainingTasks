@@ -15,5 +15,9 @@ namespace Task4_BitMEXOrderbook
         public decimal Price { get; set; }       
         public DateTime Timestamp { get; set; }
 
+        public int Total { get; set; }
+
+        
+
     }
 }

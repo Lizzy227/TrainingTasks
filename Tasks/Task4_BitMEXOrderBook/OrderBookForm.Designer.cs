@@ -38,15 +38,15 @@
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             btnRefresh = new Button();
             dgvBids = new DataGridView();
+            colBidsPrice = new DataGridViewTextBoxColumn();
+            colBidsSize = new DataGridViewTextBoxColumn();
+            colBidsTotal = new DataGridViewTextBoxColumn();
             lblSymbol = new Label();
             cbSymbols = new ComboBox();
             lblMarketPrice = new Label();
             panel1 = new Panel();
             rbtnWebSocket = new RadioButton();
             rbtnREST = new RadioButton();
-            colBidsPrice = new DataGridViewTextBoxColumn();
-            colBidsSize = new DataGridViewTextBoxColumn();
-            colBidsTotal = new DataGridViewTextBoxColumn();
             dgvAsks = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
@@ -62,7 +62,7 @@
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(120, 23);
             btnRefresh.TabIndex = 0;
-            btnRefresh.Text = "Refresh";
+            btnRefresh.Text = "Load Data";
             btnRefresh.UseVisualStyleBackColor = true;
             btnRefresh.Click += btnRefresh_Click;
             // 
@@ -108,6 +108,24 @@
             dgvBids.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvBids.Size = new Size(463, 150);
             dgvBids.TabIndex = 1;
+            // 
+            // colBidsPrice
+            // 
+            colBidsPrice.HeaderText = "Price";
+            colBidsPrice.Name = "colBidsPrice";
+            colBidsPrice.ReadOnly = true;
+            // 
+            // colBidsSize
+            // 
+            colBidsSize.HeaderText = "Size (USD)";
+            colBidsSize.Name = "colBidsSize";
+            colBidsSize.ReadOnly = true;
+            // 
+            // colBidsTotal
+            // 
+            colBidsTotal.HeaderText = "Total (USD)";
+            colBidsTotal.Name = "colBidsTotal";
+            colBidsTotal.ReadOnly = true;
             // 
             // lblSymbol
             // 
@@ -166,24 +184,6 @@
             rbtnREST.Text = "REST";
             rbtnREST.UseVisualStyleBackColor = true;
             rbtnREST.CheckedChanged += rbtnREST_CheckedChanged;
-            // 
-            // colBidsPrice
-            // 
-            colBidsPrice.HeaderText = "Price";
-            colBidsPrice.Name = "colBidsPrice";
-            colBidsPrice.ReadOnly = true;
-            // 
-            // colBidsSize
-            // 
-            colBidsSize.HeaderText = "Size (USD)";
-            colBidsSize.Name = "colBidsSize";
-            colBidsSize.ReadOnly = true;
-            // 
-            // colBidsTotal
-            // 
-            colBidsTotal.HeaderText = "Total (USD)";
-            colBidsTotal.Name = "colBidsTotal";
-            colBidsTotal.ReadOnly = true;
             // 
             // dgvAsks
             // 
