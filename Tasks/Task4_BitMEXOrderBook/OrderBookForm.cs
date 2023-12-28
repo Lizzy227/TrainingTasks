@@ -69,11 +69,15 @@ namespace Task4_BitMEXOrderbook
             if (subOrUnsub)
             {
                 webHandlerInstance.Subscribe("update", MessageHandler.HandleUpdateMessage);
+                webHandlerInstance.Subscribe("insert", MessageHandler.HandleInsertMessage);
+                webHandlerInstance.Subscribe("delete", MessageHandler.HandleDeleteMessage);
                 subOrUnsub = false;
             }
             else
             {
                 webHandlerInstance.Unsubscribe("update");
+                webHandlerInstance.Unsubscribe("insert");
+                webHandlerInstance.Unsubscribe("delete");
                 subOrUnsub = true;
             }
         }
