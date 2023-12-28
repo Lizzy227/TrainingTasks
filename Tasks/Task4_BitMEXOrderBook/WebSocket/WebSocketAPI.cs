@@ -7,7 +7,7 @@ using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Task4_BitMEXOrderbook
+namespace Task4_BitMEXOrderbook.WebSocket
 {
     internal class WebSocketAPI
     {
@@ -40,9 +40,9 @@ namespace Task4_BitMEXOrderbook
                 WebSocketReceiveResult result = await clientWebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
                 if (result.MessageType == WebSocketMessageType.Text)
                 {
-                    string receivedMessage = System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    string receivedMessage = Encoding.UTF8.GetString(buffer, 0, result.Count);
                     Console.WriteLine($"Received: {receivedMessage}");
-                    
+
                     // Process the received message as needed
                 }
             }
@@ -50,7 +50,7 @@ namespace Task4_BitMEXOrderbook
 
         public async Task Send(string message)
         {
-            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(message);
+            byte[] buffer = Encoding.UTF8.GetBytes(message);
             await clientWebSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
         }
 

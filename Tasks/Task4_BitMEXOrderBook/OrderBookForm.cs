@@ -1,5 +1,6 @@
 using System;
-using Task4_BitMEXOrderbook;
+using Task4_BitMEXOrderbook.REST;
+using Task4_BitMEXOrderbook.WebSocket;
 
 namespace Task4_BitMEXOrderbook
 {
