@@ -11,10 +11,9 @@ namespace CallbacksTask
 {
     public class SimpleMessageProvider
     {
-        
-        public delegate void MessageCallback(object sender, SimpleEventArgs e);
-        public event MessageCallback EvenMessageReceivedEvent;
-        public event MessageCallback OddMessageReceivedEvent;
+
+        public event EventHandler<SimpleEventArgs> EvenMessageReceivedEvent;
+        public event EventHandler<SimpleEventArgs> OddMessageReceivedEvent;
 
         //Keats: I see what you did here, however our convention is to use
         //public event EventHandler<SimpleEventArgs> EvenMessageReceivedEvent;
