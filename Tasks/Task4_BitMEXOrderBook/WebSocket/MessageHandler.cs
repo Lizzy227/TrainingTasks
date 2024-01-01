@@ -1,4 +1,7 @@
 ﻿using Task4_BitMEXOrderbook;
+using System.Linq;
+using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 
 namespace Task4_BitMEXOrderbook.WebSocket
 {
@@ -40,6 +43,23 @@ namespace Task4_BitMEXOrderbook.WebSocket
             }
         }
 
+        public static async Task HandleOrderbookSnapshot(WebSocketEventArgs e)
+        {
+            try
+            {
+                JObject jsonObject = JObject.Parse(e.Message);
+                JToken dataToken = jsonObject["data"];
+
+
+                //var bidEntries = e.Message.Where(entry => entry.Side == "Buy").ToList();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

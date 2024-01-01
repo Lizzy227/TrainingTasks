@@ -31,7 +31,7 @@ namespace Task4_BitMEXOrderbook
                     dgvAsks.Rows.Clear();
                 }
                 var entries = await apiServices.GetOrderBookAsync(cbSymbols.SelectedValue.ToString());
-                orderBook.UpdateGrids(dgvBids, dgvAsks, entries);
+                orderBook.UpdateGridsForREST(dgvBids, dgvAsks, entries);
             }
             else
             {
@@ -71,6 +71,7 @@ namespace Task4_BitMEXOrderbook
                 webHandlerInstance.Subscribe("update", MessageHandler.HandleUpdateMessage);
                 webHandlerInstance.Subscribe("insert", MessageHandler.HandleInsertMessage);
                 webHandlerInstance.Subscribe("delete", MessageHandler.HandleDeleteMessage);
+                webHandlerInstance.Subscribe("partial", MessageHandler.HandleOrderbookSnapshot);
                 subOrUnsub = false;
             }
             else
@@ -78,6 +79,7 @@ namespace Task4_BitMEXOrderbook
                 webHandlerInstance.Unsubscribe("update");
                 webHandlerInstance.Unsubscribe("insert");
                 webHandlerInstance.Unsubscribe("delete");
+                webHandlerInstance.Unsubscribe("partial");
                 subOrUnsub = true;
             }
         }

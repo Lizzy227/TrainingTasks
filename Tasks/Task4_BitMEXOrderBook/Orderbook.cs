@@ -19,7 +19,7 @@ namespace Task4_BitMEXOrderbook
            
         }
 
-        public void UpdateGrids(DataGridView dgvBids, DataGridView dgvAsks,List<OrderbookEntry> entries)
+        public void UpdateGridsForREST(DataGridView dgvBids, DataGridView dgvAsks,List<OrderbookEntry> entries)
         {
             try
             {
