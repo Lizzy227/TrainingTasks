@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Net.WebSockets;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Task4_BitMEXOrderbook.WebSocket
 {
@@ -56,6 +57,8 @@ namespace Task4_BitMEXOrderbook.WebSocket
             }
         }
 
+        
+
         public async Task ProcessQueueEvents()
         {
             try
@@ -65,7 +68,7 @@ namespace Task4_BitMEXOrderbook.WebSocket
                 string receivedMessage = string.Empty;
                 while(eventQueue.Count > 0)
                 {
-                    receivedMessage = eventQueue.Peek();
+                    receivedMessage = GetFullMessage(eventQueue);
                     actionType = ExtractActionType(receivedMessage);
 
                     WebSocketHandler.Instance.OnWebSocketEvent(actionType, receivedMessage);
@@ -76,6 +79,43 @@ namespace Task4_BitMEXOrderbook.WebSocket
             {
 
                 throw;
+            }
+        }
+
+        string GetFullMessage(Queue<string> eventQueue)
+        {
+            StringBuilder fullMessageBuilder = new StringBuilder();
+            try
+            {
+                string messageFragment = eventQueue.Peek();
+                if (IsCompleteMessage(messageFragment))
+                    return messageFragment;
+
+
+                fullMessageBuilder.Append(messageFragment);
+
+
+                while (eventQueue.Count>0)
+                {
+                    messageFragment = eventQueue.Dequeue();
+
+                    if (messageFragment.Contains("partial"))
+                    {
+                        fullMessageBuilder.Clear();
+                    }
+
+                    fullMessageBuilder.Append(messageFragment);
+
+                    if (IsCompleteMessage(fullMessageBuilder.ToString()))
+                        break;
+                }
+
+                return fullMessageBuilder.ToString();
+                
+            }
+            catch(Exception)
+            {
+                return fullMessageBuilder.ToString();
             }
         }
 
@@ -97,6 +137,18 @@ namespace Task4_BitMEXOrderbook.WebSocket
             }
 
             return "generic";
+        }
+
+        bool IsCompleteMessage(string message)
+        {
+            try
+            {
+                JObject.Parse(message);
+                return true;
+            }catch(JsonReaderException)
+            {
+                return false;
+            }
         }
 
         public async Task Send(string message)
