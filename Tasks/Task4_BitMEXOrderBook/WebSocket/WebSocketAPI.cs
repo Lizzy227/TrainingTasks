@@ -20,27 +20,62 @@ namespace Task4_BitMEXOrderbook.WebSocket
 
         public async Task Connect(string uri)
         {
-            clientWebSocket = new ClientWebSocket();
-            await clientWebSocket.ConnectAsync(new Uri(uri), CancellationToken.None);
+            try
+            {
+                clientWebSocket = new ClientWebSocket();
+                await clientWebSocket.ConnectAsync(new Uri(uri), CancellationToken.None);
 
-            // Start receiving messages
-            _ = Task.Run(ReceiveLoop);
+                // Start receiving messages
+                _ = Task.Run(ReceiveLoop);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private async Task ReceiveLoop()
         {
             byte[] buffer = new byte[1024];
-            while (clientWebSocket.State == WebSocketState.Open)
+            try
             {
-                WebSocketReceiveResult result = await clientWebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                if (result.MessageType == WebSocketMessageType.Text)
+                while (clientWebSocket.State == WebSocketState.Open)
                 {
-                    string receivedMessage = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    WebSocketReceiveResult result = await clientWebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                    if (result.MessageType == WebSocketMessageType.Text)
+                    {
+                        string receivedMessage = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
-                    string actionType = ExtractActionType(receivedMessage);
+                        QueueHandler.Instance.AddEventToQueue(receivedMessage);
+                    }
+                }
+            }catch (Exception ex)
+            {
+
+            }
+        }
+
+        public async Task ProcessQueueEvents()
+        {
+            try
+            {
+                Queue<string> eventQueue = QueueHandler.Instance.GetEventQueue();
+                string actionType = string.Empty;
+                string receivedMessage = string.Empty;
+                while(eventQueue.Count > 0)
+                {
+                    receivedMessage = eventQueue.Peek();
+                    actionType = ExtractActionType(receivedMessage);
 
                     WebSocketHandler.Instance.OnWebSocketEvent(actionType, receivedMessage);
+                    QueueHandler.Instance.RemoveFirstEventFromQueue();
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

@@ -81,5 +81,11 @@ namespace Task4_BitMEXOrderbook
                 subOrUnsub = true;
             }
         }
+
+        private async void btnStartQueueProcessing_Click(object sender, EventArgs e)
+        {
+            await webAPIInstance.ProcessQueueEvents();
+
+        }
     }
 }

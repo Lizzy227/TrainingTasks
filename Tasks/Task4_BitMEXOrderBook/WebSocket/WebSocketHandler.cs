@@ -18,10 +18,8 @@ namespace Task4_BitMEXOrderbook.WebSocket
 
         public static WebSocketHandler Instance { get { return instance; } }
 
-
         public virtual void OnWebSocketEvent(string actionType, string receivedMessage)
         {
-
             WebSocketEventArgs eventArgs = new WebSocketEventArgs(actionType, receivedMessage);
 
             if (_webSocketSubscribers.TryGetValue(eventArgs.ActionType, out var subscribers))
