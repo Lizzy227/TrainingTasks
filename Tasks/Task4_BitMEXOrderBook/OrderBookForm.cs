@@ -59,7 +59,7 @@ namespace Task4_BitMEXOrderbook
             }
         }
 
-        bool subOrUnsub = false;
+        bool subOrUnsub = true;
         private void btnSub_Click(object sender, EventArgs e)
         {
             SubOrUnsub();

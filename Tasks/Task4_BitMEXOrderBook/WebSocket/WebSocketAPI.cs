@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Net.WebSockets;
-using System.Threading;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
 namespace Task4_BitMEXOrderbook.WebSocket
@@ -35,7 +29,7 @@ namespace Task4_BitMEXOrderbook.WebSocket
 
         private async Task ReceiveLoop()
         {
-            byte[] buffer = new byte[1024]; // Set your buffer size
+            byte[] buffer = new byte[1024];
             while (clientWebSocket.State == WebSocketState.Open)
             {
                 WebSocketReceiveResult result = await clientWebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
@@ -43,22 +37,15 @@ namespace Task4_BitMEXOrderbook.WebSocket
                 {
                     string receivedMessage = Encoding.UTF8.GetString(buffer, 0, result.Count);
 
-                    // Extract the "action" field from the received message
                     string actionType = ExtractActionType(receivedMessage);
 
-                    // Pass the "action" field to the EventCallback method
-                    WebSocketHandler.Instance.EventCallback(actionType, receivedMessage);
-
-                    // Process the received message as needed
+                    WebSocketHandler.Instance.OnWebSocketEvent(actionType, receivedMessage);
                 }
             }
         }
 
         private string ExtractActionType(string message)
         {
-            // Implement your JSON parsing logic to extract the "action" field
-            // For example, assuming a JSON-like structure {"action": "Type", "otherField": "value"}
-            // You might use a JSON library or manual parsing
             try
             {
                 JObject jsonObject = JObject.Parse(message);
@@ -74,8 +61,7 @@ namespace Task4_BitMEXOrderbook.WebSocket
                 // Handle JSON parsing errors
             }
 
-            // Default to a generic type if extraction fails
-            return "Generic";
+            return "generic";
         }
 
         public async Task Send(string message)

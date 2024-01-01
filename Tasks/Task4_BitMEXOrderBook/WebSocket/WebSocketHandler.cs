@@ -12,21 +12,19 @@ namespace Task4_BitMEXOrderbook.WebSocket
     {
         public event EventHandler<WebSocketEventArgs> WebSocketEvent;
         private ConcurrentDictionary<string, ConcurrentHashSet<Func<WebSocketEventArgs, Task>>> _webSocketSubscribers = new();
+        private delegate Task WebSocketEventDelegate(WebSocketEventArgs eventArgs);
 
         private static readonly WebSocketHandler instance = new WebSocketHandler();
 
         public static WebSocketHandler Instance { get { return instance; } }
 
-        public void EventCallback(string actionType, string receivedMessage)
+
+        public virtual void OnWebSocketEvent(string actionType, string receivedMessage)
         {
+
             WebSocketEventArgs eventArgs = new WebSocketEventArgs(actionType, receivedMessage);
 
-            OnWebSocketEvent(eventArgs);
-        }
-
-        public virtual void OnWebSocketEvent(WebSocketEventArgs eventArgs)
-        {
-            if(_webSocketSubscribers.TryGetValue(eventArgs.ActionType, out var subscribers))
+            if (_webSocketSubscribers.TryGetValue(eventArgs.ActionType, out var subscribers))
             {
                 foreach(var subscriber in subscribers)
                 {

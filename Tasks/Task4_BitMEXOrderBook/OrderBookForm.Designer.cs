@@ -60,7 +60,7 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(232, 464);
+            btnRefresh.Location = new Point(228, 443);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(168, 23);
             btnRefresh.TabIndex = 0;
@@ -259,7 +259,7 @@
             // 
             // btnSub
             // 
-            btnSub.Location = new Point(756, 464);
+            btnSub.Location = new Point(270, 472);
             btnSub.Name = "btnSub";
             btnSub.Size = new Size(75, 23);
             btnSub.TabIndex = 9;
