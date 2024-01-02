@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             btnRefresh = new Button();
             dgvBids = new DataGridView();
             colBidsPrice = new DataGridViewTextBoxColumn();
@@ -53,6 +53,9 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             btnSub = new Button();
             btnStartQueueProcessing = new Button();
+            pnlSubscribe = new Panel();
+            pnlProcessQueue = new Panel();
+            pnlSocketConnection = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvBids).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAsks).BeginInit();
@@ -60,10 +63,10 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(423, 945);
-            btnRefresh.Margin = new Padding(6, 6, 6, 6);
+            btnRefresh.Location = new Point(325, 738);
+            btnRefresh.Margin = new Padding(5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(312, 49);
+            btnRefresh.Size = new Size(240, 38);
             btnRefresh.TabIndex = 0;
             btnRefresh.Text = "Load Data";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -75,43 +78,43 @@
             dgvBids.BorderStyle = BorderStyle.Fixed3D;
             dgvBids.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dgvBids.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.BackColor = SystemColors.Menu;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvBids.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.BackColor = SystemColors.Menu;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvBids.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvBids.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBids.Columns.AddRange(new DataGridViewColumn[] { colBidsPrice, colBidsSize, colBidsTotal });
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.BackColor = SystemColors.Window;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            dgvBids.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvBids.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBids.GridColor = SystemColors.Menu;
-            dgvBids.Location = new Point(167, 173);
-            dgvBids.Margin = new Padding(6, 6, 6, 6);
+            dgvBids.Location = new Point(128, 135);
+            dgvBids.Margin = new Padding(5);
             dgvBids.Name = "dgvBids";
             dgvBids.ReadOnly = true;
             dgvBids.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Menu;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dgvBids.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Menu;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvBids.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvBids.RowHeadersVisible = false;
             dgvBids.RowHeadersWidth = 82;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvBids.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            dgvBids.Size = new Size(860, 320);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvBids.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvBids.Size = new Size(662, 250);
             dgvBids.TabIndex = 1;
             // 
             // colBidsPrice
@@ -138,29 +141,29 @@
             // lblSymbol
             // 
             lblSymbol.AutoSize = true;
-            lblSymbol.Location = new Point(704, 77);
-            lblSymbol.Margin = new Padding(6, 0, 6, 0);
+            lblSymbol.Location = new Point(542, 60);
+            lblSymbol.Margin = new Padding(5, 0, 5, 0);
             lblSymbol.Name = "lblSymbol";
-            lblSymbol.Size = new Size(93, 32);
+            lblSymbol.Size = new Size(72, 25);
             lblSymbol.TabIndex = 3;
             lblSymbol.Text = "Symbol";
             // 
             // cbSymbols
             // 
             cbSymbols.FormattingEnabled = true;
-            cbSymbols.Location = new Point(802, 70);
-            cbSymbols.Margin = new Padding(6, 6, 6, 6);
+            cbSymbols.Location = new Point(617, 55);
+            cbSymbols.Margin = new Padding(5);
             cbSymbols.Name = "cbSymbols";
-            cbSymbols.Size = new Size(221, 40);
+            cbSymbols.Size = new Size(171, 33);
             cbSymbols.TabIndex = 4;
             // 
             // lblMarketPrice
             // 
             lblMarketPrice.AutoSize = true;
-            lblMarketPrice.Location = new Point(542, 535);
-            lblMarketPrice.Margin = new Padding(6, 0, 6, 0);
+            lblMarketPrice.Location = new Point(417, 418);
+            lblMarketPrice.Margin = new Padding(5, 0, 5, 0);
             lblMarketPrice.Name = "lblMarketPrice";
-            lblMarketPrice.Size = new Size(140, 32);
+            lblMarketPrice.Size = new Size(104, 25);
             lblMarketPrice.TabIndex = 5;
             lblMarketPrice.Text = "MarketPrice";
             // 
@@ -168,19 +171,19 @@
             // 
             panel1.Controls.Add(rbtnWebSocket);
             panel1.Controls.Add(rbtnREST);
-            panel1.Location = new Point(167, 70);
-            panel1.Margin = new Padding(6, 6, 6, 6);
+            panel1.Location = new Point(128, 55);
+            panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(293, 49);
+            panel1.Size = new Size(225, 38);
             panel1.TabIndex = 6;
             // 
             // rbtnWebSocket
             // 
             rbtnWebSocket.AutoSize = true;
-            rbtnWebSocket.Location = new Point(130, 4);
-            rbtnWebSocket.Margin = new Padding(6, 6, 6, 6);
+            rbtnWebSocket.Location = new Point(100, 3);
+            rbtnWebSocket.Margin = new Padding(5);
             rbtnWebSocket.Name = "rbtnWebSocket";
-            rbtnWebSocket.Size = new Size(164, 36);
+            rbtnWebSocket.Size = new Size(126, 29);
             rbtnWebSocket.TabIndex = 1;
             rbtnWebSocket.TabStop = true;
             rbtnWebSocket.Text = "WebSocket";
@@ -189,10 +192,10 @@
             // rbtnREST
             // 
             rbtnREST.AutoSize = true;
-            rbtnREST.Location = new Point(9, 4);
-            rbtnREST.Margin = new Padding(6, 6, 6, 6);
+            rbtnREST.Location = new Point(7, 3);
+            rbtnREST.Margin = new Padding(5);
             rbtnREST.Name = "rbtnREST";
-            rbtnREST.Size = new Size(97, 36);
+            rbtnREST.Size = new Size(76, 29);
             rbtnREST.TabIndex = 0;
             rbtnREST.TabStop = true;
             rbtnREST.Text = "REST";
@@ -205,44 +208,44 @@
             dgvAsks.BorderStyle = BorderStyle.Fixed3D;
             dgvAsks.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dgvAsks.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.BackColor = SystemColors.Menu;
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dgvAsks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = SystemColors.Menu;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvAsks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvAsks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAsks.ColumnHeadersVisible = false;
             dgvAsks.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = SystemColors.Window;
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
-            dgvAsks.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvAsks.DefaultCellStyle = dataGridViewCellStyle6;
             dgvAsks.GridColor = SystemColors.Menu;
-            dgvAsks.Location = new Point(167, 612);
-            dgvAsks.Margin = new Padding(6, 6, 6, 6);
+            dgvAsks.Location = new Point(128, 478);
+            dgvAsks.Margin = new Padding(5);
             dgvAsks.Name = "dgvAsks";
             dgvAsks.ReadOnly = true;
             dgvAsks.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = SystemColors.Menu;
-            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle15.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
-            dgvAsks.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Menu;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvAsks.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvAsks.RowHeadersVisible = false;
             dgvAsks.RowHeadersWidth = 82;
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvAsks.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            dgvAsks.Size = new Size(860, 320);
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAsks.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dgvAsks.Size = new Size(662, 250);
             dgvAsks.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
@@ -268,10 +271,10 @@
             // 
             // btnSub
             // 
-            btnSub.Location = new Point(501, 1007);
-            btnSub.Margin = new Padding(6, 6, 6, 6);
+            btnSub.Location = new Point(385, 787);
+            btnSub.Margin = new Padding(5);
             btnSub.Name = "btnSub";
-            btnSub.Size = new Size(139, 49);
+            btnSub.Size = new Size(107, 38);
             btnSub.TabIndex = 9;
             btnSub.Text = "Subscribe";
             btnSub.UseVisualStyleBackColor = true;
@@ -279,19 +282,50 @@
             // 
             // btnStartQueueProcessing
             // 
-            btnStartQueueProcessing.Location = new Point(695, 1009);
+            btnStartQueueProcessing.Location = new Point(353, 832);
+            btnStartQueueProcessing.Margin = new Padding(2);
             btnStartQueueProcessing.Name = "btnStartQueueProcessing";
-            btnStartQueueProcessing.Size = new Size(219, 46);
+            btnStartQueueProcessing.Size = new Size(168, 36);
             btnStartQueueProcessing.TabIndex = 10;
             btnStartQueueProcessing.Text = "Queue Process";
             btnStartQueueProcessing.UseVisualStyleBackColor = true;
             btnStartQueueProcessing.Click += btnStartQueueProcessing_Click;
             // 
+            // pnlSubscribe
+            // 
+            pnlSubscribe.BackColor = Color.Red;
+            pnlSubscribe.Location = new Point(580, 787);
+            pnlSubscribe.Name = "pnlSubscribe";
+            pnlSubscribe.Size = new Size(22, 24);
+            pnlSubscribe.TabIndex = 11;
+            pnlSubscribe.Visible = false;
+            // 
+            // pnlProcessQueue
+            // 
+            pnlProcessQueue.BackColor = Color.Red;
+            pnlProcessQueue.Location = new Point(580, 832);
+            pnlProcessQueue.Name = "pnlProcessQueue";
+            pnlProcessQueue.Size = new Size(22, 24);
+            pnlProcessQueue.TabIndex = 12;
+            pnlProcessQueue.Visible = false;
+            // 
+            // pnlSocketConnection
+            // 
+            pnlSocketConnection.BackColor = Color.Red;
+            pnlSocketConnection.Location = new Point(580, 738);
+            pnlSocketConnection.Name = "pnlSocketConnection";
+            pnlSocketConnection.Size = new Size(22, 24);
+            pnlSocketConnection.TabIndex = 12;
+            pnlSocketConnection.Visible = false;
+            // 
             // OrderBookForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1892, 1103);
+            ClientSize = new Size(1455, 926);
+            Controls.Add(pnlSocketConnection);
+            Controls.Add(pnlProcessQueue);
+            Controls.Add(pnlSubscribe);
             Controls.Add(btnStartQueueProcessing);
             Controls.Add(btnSub);
             Controls.Add(dgvAsks);
@@ -301,7 +335,7 @@
             Controls.Add(lblSymbol);
             Controls.Add(dgvBids);
             Controls.Add(btnRefresh);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(5);
             Name = "OrderBookForm";
             Text = "Order Book";
             ((System.ComponentModel.ISupportInitialize)dgvBids).EndInit();
@@ -331,5 +365,8 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Button btnSub;
         private Button btnStartQueueProcessing;
+        private Panel pnlSubscribe;
+        private Panel pnlProcessQueue;
+        private Panel pnlSocketConnection;
     }
 }

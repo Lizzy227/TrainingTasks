@@ -11,11 +11,11 @@ namespace Task4_BitMEXOrderbook.WebSocket
         public static async Task HandleUpdateMessage(WebSocketEventArgs e)
         {
 
-            string message = e.Message + ": " + DateTime.Now.ToString("HH:mm:ss");
-            /*
+            //string message = e.Message + ": " + DateTime.Now.ToString("HH:mm:ss");
+
             try
             {
-                
+
                 JObject jsonObject = JObject.Parse(e.Message);
                 JToken dataToken = jsonObject["data"];
 
@@ -53,7 +53,7 @@ namespace Task4_BitMEXOrderbook.WebSocket
             {
                 //throw;
             }
-            */
+
         }
 
         public static async Task HandleInsertMessage(WebSocketEventArgs e)

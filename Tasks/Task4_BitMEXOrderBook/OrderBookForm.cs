@@ -35,7 +35,24 @@ namespace Task4_BitMEXOrderbook
             }
             else
             {
-                await webAPIInstance.Connect("wss://ws.bitmex.com/realtime?subscribe=orderBookL2_25:XBTUSD");
+                pnlSocketConnection.BackColor = Color.Green;
+                await webAPIInstance.Connect($"wss://ws.bitmex.com/realtime?subscribe=orderBookL2_25:{cbSymbols.SelectedValue.ToString()}");
+            }
+        }
+
+        void showHideConnectors(bool showHide)
+        {
+            if (showHide)
+            {
+                pnlSocketConnection.Visible = true;
+                pnlSubscribe.Visible = true;
+                pnlProcessQueue.Visible = true;
+            }
+            else
+            {
+                pnlSubscribe.Visible = false;
+                pnlSubscribe.Visible = false;
+                pnlProcessQueue.Visible = false;
             }
         }
 
@@ -46,10 +63,12 @@ namespace Task4_BitMEXOrderbook
                 if (rbtnREST.Checked)
                 {
                     btnRefresh.Text = "Refresh via REST.";
+                    showHideConnectors(false);
                 }
                 if (rbtnWebSocket.Checked)
                 {
                     btnRefresh.Text = "Refresh via WebSocket.";
+                    showHideConnectors(true);
                 }
             }
             catch (Exception)
@@ -73,6 +92,7 @@ namespace Task4_BitMEXOrderbook
                 webHandlerInstance.Subscribe("delete", MessageHandler.HandleDeleteMessage);
                 webHandlerInstance.Subscribe("partial", MessageHandler.HandleOrderbookSnapshot);
                 subOrUnsub = false;
+                pnlSubscribe.BackColor = Color.Green;
             }
             else
             {
@@ -81,12 +101,15 @@ namespace Task4_BitMEXOrderbook
                 webHandlerInstance.Unsubscribe("delete");
                 webHandlerInstance.Unsubscribe("partial");
                 subOrUnsub = true;
+                pnlSubscribe.BackColor = Color.Red;
             }
         }
+
 
         private async void btnStartQueueProcessing_Click(object sender, EventArgs e)
         {
             await webAPIInstance.ProcessQueueEvents();
+            pnlProcessQueue.BackColor = Color.Green;
 
         }
     }
