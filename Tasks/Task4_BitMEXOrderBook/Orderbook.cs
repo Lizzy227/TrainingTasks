@@ -48,7 +48,7 @@ namespace Task4_BitMEXOrderbook
             }
         }
 
-        List<OrderbookEntry> entries = new List<OrderbookEntry>();
+        public List<OrderbookEntry> entries = new List<OrderbookEntry>();
 
         public void ClearOrderBook()
         {
