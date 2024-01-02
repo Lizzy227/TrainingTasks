@@ -128,13 +128,14 @@ namespace Task4_BitMEXOrderbook
                 if (reverseSort)
                 {
                     entries.Sort((b2, b1) => b1.Price.CompareTo(b2.Price));
+                    CalculateTotalReverseOrder(entries);
                 }
                 else
                 {
                     entries.Sort((b1, b2) => b2.Price.CompareTo(b1.Price));
+                    CalculateTotal(entries);
                 }
 
-                CalculateTotal(entries);
                 BindDataToGridView(dataGridView, entries);
             }
             catch (Exception)
@@ -162,5 +163,23 @@ namespace Task4_BitMEXOrderbook
             }
             
         }
+
+        public void CalculateTotalReverseOrder(List<OrderbookEntry> entries)
+        {
+            try
+            {
+                int total = 0;
+                for (int i = entries.Count - 1; i >= 0; i--)
+                {
+                    total += entries[i].Size;
+                    entries[i].Total = total;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }
