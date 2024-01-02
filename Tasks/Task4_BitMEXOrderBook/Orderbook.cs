@@ -115,8 +115,7 @@ namespace Task4_BitMEXOrderbook
             {
 
                 throw;
-            }
-            
+            }            
         }
 
         public void UpdateGrid(DataGridView dataGridView, List<OrderbookEntry> entries, bool reverseSort = false)
