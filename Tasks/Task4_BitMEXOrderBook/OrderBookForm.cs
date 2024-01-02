@@ -18,7 +18,7 @@ namespace Task4_BitMEXOrderbook
             apiServices = new RestAPI();
             cbSymbols.DataSource = Enum.GetValues(typeof(CurrencySymbols.Currency));
             rbtnREST.Checked = true;
-            orderBook = new Orderbook();
+            orderBook = new Orderbook(dgvBids, dgvAsks);
         }
 
         private async void btnRefresh_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace Task4_BitMEXOrderbook
                     dgvAsks.Rows.Clear();
                 }
                 var entries = await apiServices.GetOrderBookAsync(cbSymbols.SelectedValue.ToString());
-                orderBook.UpdateGridsForREST(dgvBids, dgvAsks, entries);
+                orderBook.SeparateBidAskIntoGrids(entries);
             }
             else
             {

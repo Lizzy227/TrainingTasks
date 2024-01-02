@@ -2,6 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Task4_BitMEXOrderbook.WebSocket
 {
@@ -50,9 +51,13 @@ namespace Task4_BitMEXOrderbook.WebSocket
                 JObject jsonObject = JObject.Parse(e.Message);
                 JToken dataToken = jsonObject["data"];
 
+                List<OrderbookEntry> entries = new List<OrderbookEntry>();
+                string responseBody = dataToken.ToString();
+                entries = JsonConvert.DeserializeObject<List<OrderbookEntry>>(responseBody);
 
-                //var bidEntries = e.Message.Where(entry => entry.Side == "Buy").ToList();
+                Orderbook orderbook = Orderbook.Instance;
 
+                await Task.Run(() => orderbook.SeparateBidAskIntoGrids(entries));
             }
             catch (Exception)
             {

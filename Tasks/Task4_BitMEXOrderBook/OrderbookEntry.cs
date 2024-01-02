@@ -9,7 +9,7 @@ namespace Task4_BitMEXOrderbook
     internal class OrderbookEntry
     {
         public string Symbol { get; set; }
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
         public string Side { get; set; }
         public int Size { get; set; }
         public decimal Price { get; set; }       

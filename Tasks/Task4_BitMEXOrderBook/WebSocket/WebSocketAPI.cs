@@ -11,13 +11,13 @@ namespace Task4_BitMEXOrderbook.WebSocket
         private ClientWebSocket clientWebSocket;
 
         private static readonly WebSocketAPI instance = new WebSocketAPI();
+        public static WebSocketAPI Instance { get { return instance; } }
 
         private WebSocketAPI()
         {
             // here to prevent instantiation
         }
 
-        public static WebSocketAPI Instance { get { return instance; } }
 
         public async Task Connect(string uri)
         {
@@ -31,7 +31,6 @@ namespace Task4_BitMEXOrderbook.WebSocket
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -70,9 +69,7 @@ namespace Task4_BitMEXOrderbook.WebSocket
                 {
                     receivedMessage = GetFullMessage(eventQueue);
                     actionType = ExtractActionType(receivedMessage);
-
                     WebSocketHandler.Instance.OnWebSocketEvent(actionType, receivedMessage);
-                    QueueHandler.Instance.RemoveFirstEventFromQueue();
                 }
             }
             catch (Exception)
@@ -87,7 +84,7 @@ namespace Task4_BitMEXOrderbook.WebSocket
             StringBuilder fullMessageBuilder = new StringBuilder();
             try
             {
-                string messageFragment = eventQueue.Peek();
+                string messageFragment = eventQueue.Dequeue();
                 if (IsCompleteMessage(messageFragment))
                     return messageFragment;
 
