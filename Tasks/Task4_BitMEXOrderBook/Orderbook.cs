@@ -81,7 +81,7 @@ namespace Task4_BitMEXOrderbook
             if (entries == null || entries.Count == 0) return;
 
                 var bidEntries = entries.Where(entry => entry.Side == "Buy").ToList();
-                UpdateGrid(_dgvBids, bidEntries);
+                UpdateGrid(_dgvBids, bidEntries, true);
                
                 var askEntries = entries.Where(entry => entry.Side == "Sell").ToList();
                 UpdateGrid(_dgvAsks, askEntries);
@@ -127,7 +127,7 @@ namespace Task4_BitMEXOrderbook
 
                 if (reverseSort)
                 {
-                    entries.Sort((b1, b2) => b1.Price.CompareTo(b2.Price));
+                    entries.Sort((b2, b1) => b1.Price.CompareTo(b2.Price));
                 }
                 else
                 {
