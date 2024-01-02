@@ -57,6 +57,8 @@ namespace Task4_BitMEXOrderbook.WebSocket
 
                 Orderbook orderbook = Orderbook.Instance;
 
+                orderbook.ClearOrderBook();
+
                 await Task.Run(() => orderbook.SeparateBidAskIntoGrids(entries));
             }
             catch (Exception)

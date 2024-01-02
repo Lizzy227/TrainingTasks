@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 using Task4_BitMEXOrderbook.WebSocket;
 
@@ -49,6 +50,29 @@ namespace Task4_BitMEXOrderbook
 
         List<OrderbookEntry> entries = new List<OrderbookEntry>();
 
+        public void ClearOrderBook()
+        {
+            entries.Clear();
+            if (_dgvBids.InvokeRequired)
+            {
+                // If not on the UI thread, invoke this method on the UI thread
+                _dgvBids.Invoke(new Action(() => ClearOrderBook()));
+            }
+            else
+            {
+                _dgvBids.Rows.Clear();
+            }
+
+            if (_dgvAsks.InvokeRequired)
+            {
+                // If not on the UI thread, invoke this method on the UI thread
+                _dgvAsks.Invoke(new Action(() => ClearOrderBook()));
+            }
+            else
+            {
+                _dgvAsks.Rows.Clear();
+            }
+        }
 
         public void SeparateBidAskIntoGrids(List<OrderbookEntry> entries)
         {

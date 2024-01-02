@@ -18,7 +18,7 @@ namespace Task4_BitMEXOrderbook.REST
         public RestAPI()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://testnet.bitmex.com/api/v1");
+            client.BaseAddress = new Uri("https://www.bitmex.com/api/v1");
             InitializeHttpClient();
         }
 
