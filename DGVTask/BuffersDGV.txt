@@ -78,7 +78,7 @@ BosSocket|OKX|MessageBuffer|OKXPublicBosSocket : All : 000000 : 000000ms : 02749
 Cashier Buffer* : Last|Delay : 000002 : 000000ms : 00012/min,
 DOM_BalancesBuffer : Last : 000000 : 000011ms : 00113/min,
 DOM_ExposuresBuffer : Last : 000000 : 000000ms : 00295/min,
-DOM_OrdersBuffer : Last : 000184ms : 00080/min,
+DOM_OrdersBuffer : Last : 000000 : 000184ms : 00080/min,
 DOM_PositionsBuffer : Last : 000000 : 000000ms : 00262/min,
 FilePerProcessLogger buffer C:\Users\Administrator\AppData\Local\Sandwich\ExecutionAlgoCache\20240214 - 1000FLOKIUSDT-Perp - SmartTWAP - 571750c7-6ef2-4521-bd88-98fe09a639ff.log : All : 000000 : 000000ms : 00007/min,
 FilePerProcessLogger buffer C:\Users\Administrator\AppData\Local\Sandwich\ExecutionAlgoCache\20240214 - 1000FLOKIUSDT-Perp - SmartTWAP - eb4982d7-80fc-4de1-9958-d0da5f8ea47c.log : All : 000000 : 000000ms : 00007/min,
