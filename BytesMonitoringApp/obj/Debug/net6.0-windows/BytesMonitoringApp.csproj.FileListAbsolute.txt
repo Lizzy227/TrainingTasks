@@ -1,0 +1,17 @@
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\bin\Debug\net6.0-windows\BytesMonitoringApp.exe
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\bin\Debug\net6.0-windows\BytesMonitoringApp.deps.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\bin\Debug\net6.0-windows\BytesMonitoringApp.runtimeconfig.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\bin\Debug\net6.0-windows\BytesMonitoringApp.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\bin\Debug\net6.0-windows\BytesMonitoringApp.pdb
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.frmBytesMonitor.resources
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.csproj.GenerateResource.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.AssemblyInfoInputs.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.AssemblyInfo.cs
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.csproj.CoreCompileInputs.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.sourcelink.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\refint\BytesMonitoringApp.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.pdb
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\BytesMonitoringApp.genruntimeconfig.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\BytesMonitoringApp\obj\Debug\net6.0-windows\ref\BytesMonitoringApp.dll

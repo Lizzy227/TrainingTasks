@@ -10,50 +10,41 @@ namespace Task4_BitMEXOrderbook.WebSocket
     {
         public static async Task HandleUpdateMessage(WebSocketEventArgs e)
         {
+                                
+         try
+         {
 
-            string message = e.Message + ": " + DateTime.Now.ToString("HH:mm:ss");
-            /*
-            try
-            {
-                
-                JObject jsonObject = JObject.Parse(e.Message);
-                JToken dataToken = jsonObject["data"];
+             JObject jsonObject = JObject.Parse(e.Message);
+             JToken dataToken = jsonObject["data"];
 
-                List<OrderbookEntry> updatedEntries = new List<OrderbookEntry>();
-                string responseBody = dataToken.ToString();
-                updatedEntries = JsonConvert.DeserializeObject<List<OrderbookEntry>>(responseBody);
+             List<OrderbookEntry> updatedEntries = new List<OrderbookEntry>();
+             string responseBody = dataToken.ToString();
+             updatedEntries = JsonConvert.DeserializeObject<List<OrderbookEntry>>(responseBody);
 
-                Orderbook orderbook = Orderbook.Instance;
+             Orderbook orderbook = Orderbook.Instance;
 
+         foreach (OrderbookEntry updatedEntry in updatedEntries)
+ {
+     OrderbookEntry existingEntry = orderbook.entries.FirstOrDefault(entry => entry.Id == updatedEntry.Id);
 
-                if (updatedEntries != null && orderbook.entries != null)
-                {
-                    foreach (OrderbookEntry updatedEntry in updatedEntries)
-                    {
-                        OrderbookEntry existingEntry = orderbook.entries.FirstOrDefault(entry => entry.Id == updatedEntry.Id);
+     if (existingEntry != null)
+     {
+         existingEntry.Price = updatedEntry.Price;
+         existingEntry.Size = updatedEntry.Size;
+         // Update other properties as needed
+     }
+     else
+     {
+         // Handle the case when the entry doesn't exist in the snapshot
+     }
+ }
+}
+         catch (Exception ex)
+         {
+             //throw;
+         }
+            
 
-                        if (existingEntry != null)
-                        {
-                            existingEntry.Price = updatedEntry.Price;
-                            existingEntry.Size = updatedEntry.Size;
-                            // Update other properties as needed
-                        }
-                        else
-                        {
-                            // Handle the case when the entry doesn't exist in the snapshot
-                        }
-                    }
-                }
-                else
-                {
-                    // Handle null references if necessary
-                }
-            }
-            catch (Exception ex)
-            {
-                //throw;
-            }
-            */
         }
 
         public static async Task HandleInsertMessage(WebSocketEventArgs e)

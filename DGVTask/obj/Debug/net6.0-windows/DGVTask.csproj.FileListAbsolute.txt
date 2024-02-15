@@ -1,0 +1,17 @@
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\bin\Debug\net6.0-windows\DGVTask.exe
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\bin\Debug\net6.0-windows\DGVTask.deps.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\bin\Debug\net6.0-windows\DGVTask.runtimeconfig.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\bin\Debug\net6.0-windows\DGVTask.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\bin\Debug\net6.0-windows\DGVTask.pdb
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.frmDGV.resources
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.csproj.GenerateResource.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.AssemblyInfoInputs.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.AssemblyInfo.cs
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.csproj.CoreCompileInputs.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.sourcelink.json
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\refint\DGVTask.dll
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.pdb
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\DGVTask.genruntimeconfig.cache
+C:\Users\lisa\Documents\GitHub\TrainingTasks\DGVTask\obj\Debug\net6.0-windows\ref\DGVTask.dll
