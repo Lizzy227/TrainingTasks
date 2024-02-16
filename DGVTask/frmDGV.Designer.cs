@@ -36,12 +36,11 @@
             // 
             dgvBuffers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvBuffers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBuffers.Dock = DockStyle.Fill;
             dgvBuffers.Location = new Point(0, 0);
             dgvBuffers.Name = "dgvBuffers";
             dgvBuffers.ReadOnly = true;
             dgvBuffers.RowTemplate.Height = 25;
-            dgvBuffers.Size = new Size(970, 590);
+            dgvBuffers.Size = new Size(970, 269);
             dgvBuffers.TabIndex = 0;
             // 
             // frmDGV
