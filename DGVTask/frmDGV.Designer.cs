@@ -51,6 +51,7 @@
             ClientSize = new Size(970, 590);
             Controls.Add(dgvBuffers);
             Name = "frmDGV";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Data Grid View Task";
             ((System.ComponentModel.ISupportInitialize)dgvBuffers).EndInit();
             ResumeLayout(false);

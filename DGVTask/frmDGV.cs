@@ -15,6 +15,7 @@ namespace DGVTask
             dgvBuffers.DataSource = bufferList;
         }
 
+
         private void LoadDataFile()
         {
             try
@@ -50,7 +51,9 @@ namespace DGVTask
                                     sb.Append(buffer[i]);
                                 }
                             }
+
                             buffersWithColonInName.Add(sb.ToString());
+
                             if (buffersWithColonInName.Count == 5)
                             {
                                 PopulateBindingList(buffersWithColonInName);
@@ -58,7 +61,7 @@ namespace DGVTask
                         }
                         else
                         {
-                            List<string> bufferProperties = buffer.Split(':').ToList();
+                            List<string> bufferProperties = buffer.Split(':').ToList();                           
                             if (bufferProperties.Count == 5)
                             {
                                 PopulateBindingList(bufferProperties);
@@ -72,11 +75,10 @@ namespace DGVTask
             catch (Exception)
             {
                 MessageBox.Show("Error: Something went wrong.");
-
             }
         }
 
-        private void PopulateBindingList(List<string> bufferPieces)
+        private void PopulateBindingList(List<string> bufferPieces) //string name = "Undefined", string status = "Undefined", string avgRunTime = "Undefined",   )
         {
             string name = bufferPieces[0].Trim();
             string status = bufferPieces[1].Trim();
@@ -107,4 +109,11 @@ namespace DGVTask
             bufferList.Add(new Buffer { Name = name, Status = status, Length = length, AvgRuntime = avgRuntime, Throughput = throughPut });
         }
     }
+        public class LisasDGV : DataGridView
+        {
+            public LisasDGV()
+            {
+                
+            }
+        }
 }

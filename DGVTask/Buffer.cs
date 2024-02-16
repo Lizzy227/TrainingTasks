@@ -16,10 +16,6 @@ namespace DGVTask
         public int AvgRuntime { get; set; }
 
         public int Throughput { get; set; }
-
-        //public string Item1 { get; set; }
-        //public string Item2 { get; set; }
         
-        //public string Item3 { get; set; }
     }
 }
