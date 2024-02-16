@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DGVTask
 {
+    [Serializable]
     internal class Buffer
     {
         public string Name { get; set; }
