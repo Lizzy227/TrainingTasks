@@ -33,7 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvBuffers = new DataGridView();
-            dgvLisa = new LisasDGV();
+            dgvLisa = new swSortableDGV();
             ((System.ComponentModel.ISupportInitialize)dgvBuffers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLisa).BeginInit();
             SuspendLayout();
@@ -123,6 +123,6 @@
         #endregion
 
         private DataGridView dgvBuffers;
-        private LisasDGV dgvLisa;
+        private swSortableDGV dgvLisa;
     }
 }

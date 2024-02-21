@@ -1,14 +1,14 @@
 ﻿namespace DGVTask
 {
-    public class LisasDGV : DataGridView
+    public class swSortableDGV : DataGridView
     {
-        public LisasDGV()
+        public swSortableDGV()
         {
-            InitializeLisasDGV();
+            InitializeswSortableDGV();
 
         }
 
-        private void InitializeLisasDGV()
+        private void InitializeswSortableDGV()
         {
             DataGridViewCellStyle cellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle cellStyle2 = new DataGridViewCellStyle();
