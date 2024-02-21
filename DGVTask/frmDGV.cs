@@ -80,7 +80,6 @@ namespace DGVTask
                 MessageBox.Show("Error: Something went wrong.");
             }
         }
-
         private void PopulateBindingList(List<string> bufferPieces) 
         {
             string name = bufferPieces[0].Trim();
