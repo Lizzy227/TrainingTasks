@@ -82,7 +82,7 @@ namespace DGVTask
             }
         }
 
-        private void PopulateBindingList(List<string> bufferPieces) //string name = "Undefined", string status = "Undefined", string avgRunTime = "Undefined",   )
+        private void PopulateBindingList(List<string> bufferPieces) 
         {
             string name = bufferPieces[0].Trim();
             string status = bufferPieces[1].Trim();
@@ -166,18 +166,19 @@ namespace DGVTask
         protected override void ApplySortCore(PropertyDescriptor property, ListSortDirection direction)
         {
             List<T> items = this.Items as List<T>;
-            if (items != null)
-            {
-                PropertyComparer<T> pc = new PropertyComparer<T>(property, direction);
-                items.Sort(pc);
-                _isSorted = true;
-                _sortProperty = property;
-                _sortDirection = direction;
-            }
-            else 
+
+            if (items == null)
             {
                 _isSorted = false;
+                return;
             }
+
+            PropertyComparer<T> pc = new PropertyComparer<T>(property, direction);
+            items.Sort(pc);
+            _isSorted = true;
+            _sortProperty = property;
+            _sortDirection = direction;
+
             this.OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, -1));
         }
         protected override void RemoveSortCore()

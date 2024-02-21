@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DGVTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47f5d3df663677ab27b160ae84cbaa35b73d1267")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+729c5d7f215d295d0f515af8c4ef67a33c287ed7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DGVTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DGVTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
